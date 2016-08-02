@@ -7,9 +7,14 @@
     "doc": "docs",
     "test": "test"
   },
+  "engines": {
+    "node": "5.1.0",
+    "npm": "3.3.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "postinstall": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
