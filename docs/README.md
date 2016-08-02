@@ -55,8 +55,8 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 - [x] create `StaticPages` controller and root view
 - [x] set up webpack & flux scaffold with skeleton files
 - [x] setup `APIUtil` to interact with the API
-- [ ] set up flux cycle for frontend auth
-- [ ] user signup/signin components
+- [x] set up flux cycle for frontend auth
+- [x] user signup/signin components
 - [ ] blank landing component after signin
 - [ ] style signin/signup components
 - [x] seed users

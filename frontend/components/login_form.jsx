@@ -42,14 +42,13 @@ const LoginForm = React.createClass({
     this.setState({password: e.target.value});
   },
 
-  handleSignUp(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    SessionActions.signUp(this.state);
-  },
-
-  handleLogin(e) {
-    e.preventDefault();
-    SessionActions.logIn(this.state);
+    if(this.props.location.pathname === "/login") {
+      SessionActions.logIn(this.state);
+    } else {
+      SessionActions.signUp(this.state);
+    }
   },
 
   redirectIfLoggedIn() {
@@ -62,9 +61,7 @@ const LoginForm = React.createClass({
 
     return (
       <div id="auth-form">
-        <button id="signup" onClick={this.handleSignUp}>Sign Up</button>
-        <button id="login" onClick={this.handleLogin}>Log In</button>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             onChange={this.handleUsername}
@@ -73,6 +70,11 @@ const LoginForm = React.createClass({
           <input
             type="password"
             on Change={this.handlePassword}
+          />
+
+          <input
+            type="submit"
+            value="Submit"
           />
         </form>
       </div>

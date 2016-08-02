@@ -1,5 +1,6 @@
-import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, Link } from 'react-router';
 
+const History = require('./history');
 const React = require('react');
 const ReactDOM = require('react-dom');
 const App = require('./components/app');
@@ -21,5 +22,5 @@ function _ensureLoggedIn(nextState, replace) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
-  ReactDOM.render(<Router history={hashHistory} routes={routes} />, root);
+  ReactDOM.render(<Router history={History} routes={routes} />, root);
 });
