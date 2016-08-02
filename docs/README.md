@@ -68,7 +68,7 @@ the API.
 
 - [ ] create `Song` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`SongsController`)
+- [ ] CRUD API for songs (`SongsController`)
 - [ ] jBuilder views for songs
 - [ ] test out API interaction in the console.
 - implement each song component, building out the flux loop as needed.

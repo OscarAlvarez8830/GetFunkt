@@ -3,11 +3,35 @@ const Link = require('react-router').Link;
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const History = require('../history');
 
 const LoginForm = React.createClass({
 
   getInitialState() {
     return({username: "", password: ""});
+  },
+
+  componentDidMount() {
+    this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+    this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
+  },
+
+  componentWillUnmount() {
+    this.errorListener.remove();
+    this.sessionListener.remove();
+  },
+
+  errors() {
+    const errors = ErroStore.errors(this.formType());
+    const messages = errors.map( (errorMsg, i) => {
+      return <li key={i}>{errorMsg}</li>;
+    });
+
+    return <ul>{messages}</ul>;
+  },
+
+  formType() {
+    return this.props.location.pathname.slice(1);
   },
 
   handleUsername(e) {
@@ -20,10 +44,18 @@ const LoginForm = React.createClass({
 
   handleSignUp(e) {
     e.preventDefault();
+    SessionActions.signUp(this.state);
   },
 
   handleLogin(e) {
     e.preventDefault();
+    SessionActions.logIn(this.state);
+  },
+
+  redirectIfLoggedIn() {
+    if (SessionStore.isUserLoggedIn()) {
+      History.push("/");
+    }
   },
 
   render () {
