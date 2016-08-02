@@ -2,16 +2,7 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
 const React = require('react');
 const ReactDOM = require('react-dom');
-
-const App = React.createClass({
-  render () {
-    return (
-      <div>
-        {this.props.children}
-      </div>
-    );
-  }
-});
+const App = require('./components/app');
 
 const routes = (
   <Route path="/" component={SongsIndex} >

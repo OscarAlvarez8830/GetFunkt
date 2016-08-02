@@ -49,17 +49,17 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 
 **Objective:** Functioning rails project with front-end Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication backend setup
-- [ ] create `StaticPages` controller and root view
-- [ ] set up webpack & flux scaffold with skeleton files
-- [ ] setup `APIUtil` to interact with the API
+- [x] create new project
+- [x] create `User` model
+- [x] authentication backend setup
+- [x] create `StaticPages` controller and root view
+- [x] set up webpack & flux scaffold with skeleton files
+- [x] setup `APIUtil` to interact with the API
 - [ ] set up flux cycle for frontend auth
 - [ ] user signup/signin components
 - [ ] blank landing component after signin
 - [ ] style signin/signup components
-- [ ] seed users
+- [x] seed users
 
 ### Phase 2: Song Model, API, and components (2 days, W1 Th 6pm)
 
