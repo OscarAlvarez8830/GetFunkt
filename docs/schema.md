@@ -30,6 +30,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 body        | string    | not null
 user_id     | integer   | not null, foreign key (references users), indexed
+song_id     | integer   | not null, foreign key (references songs), indexed
 
 ## users
 column name     | data type | details

@@ -9,7 +9,6 @@ _**exactly**_ match the nesting of your routes.)
 * **App**
   * Navbar
   * PlaylistsIndex
-    * Search
     * PlaylistIndexItem
     * PlaylistForm
   * **LoginForm**
@@ -28,7 +27,7 @@ _**exactly**_ match the nesting of your routes.)
 * **component:** `App` **path:** `/`
   * **component** `LoginForm` **path:** /login
   * **component** `SignupForm` **path:** /signup
-  * **component:** `SongsIndex` **path:** index
+  * **component:** `SongsIndex` **path:** /songs
   * **component:** `SongsIndex` **path:** `playlists/:playlistId`
     * **component:** `SongComments` **path:** `songs/:songId`
   * **component:** `SongsIndex` **path:** none

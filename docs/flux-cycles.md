@@ -143,7 +143,7 @@ what you'll need to do.
 * `PlaylistsIndex` component listens to `Playlist` store.
 
 
-## SearchSuggestion Cycles
+<!-- ## SearchSuggestion Cycles
 
 * `fetchSearchSuggestions`
   0. invoked from `SongSearchBar` `onChange` when there is text
@@ -160,4 +160,4 @@ what you'll need to do.
 
 ### Store Listeners
 
-* `SearchBarSuggestions` component listens to `SearchSuggestion` store.
+* `SearchBarSuggestions` component listens to `SearchSuggestion` store. -->
