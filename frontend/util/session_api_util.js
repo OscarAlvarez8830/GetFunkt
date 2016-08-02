@@ -1,21 +1,23 @@
 const SessionApiUtil = {
-  logIn(user, success, error) {
+  logIn(user, success, errorHandler) {
+    debugger
     $.ajax({
-      url: 'api/session',
+      url: '/api/session',
       method: 'POST',
       data: { user },
       success,
-      error(xhr) {
-        const errors = xhr.responseJSON;
-        error("login", errors);
+      error: (xhr) => {
+        // const errors = xhr.responseJSON;
+        // errorHandler("login", errors);
+        console.log(xhr);
       }
     });
   },
 
   logOut(success) {
     $.ajax({
-      url: 'api/session',
-      method: 'DESTROY',
+      url: '/api/session',
+      method: 'DELETE',
       success,
       error: () => {
         console.log("Logout error in SessionApiUtil#logout");
@@ -25,7 +27,7 @@ const SessionApiUtil = {
 
   signUp(user, success, error) {
     $.ajax({
-      url: 'api/user',
+      url: '/api/user',
       method: 'POST',
       dataType: 'JSON',
       data: { user },
@@ -39,7 +41,7 @@ const SessionApiUtil = {
 
   fetchCurrentUser(success, complete) {
     $.ajax({
-      url: 'api/session',
+      url: '/api/session',
       method: 'GET',
       success,
       error: (xhr) => {

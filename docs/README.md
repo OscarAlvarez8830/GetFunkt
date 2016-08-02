@@ -57,7 +57,7 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 - [x] setup `APIUtil` to interact with the API
 - [x] set up flux cycle for frontend auth
 - [x] user signup/signin components
-- [ ] blank landing component after signin
+- [x] blank landing component after signin
 - [ ] style signin/signup components
 - [x] seed users
 

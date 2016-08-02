@@ -44,7 +44,7 @@ const LoginForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
-    if(this.props.location.pathname === "/login") {
+    if (this.props.location.pathname === "/login") {
       SessionActions.logIn(this.state);
     } else {
       SessionActions.signUp(this.state);
@@ -62,16 +62,20 @@ const LoginForm = React.createClass({
     return (
       <div id="auth-form">
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            onChange={this.handleUsername}
-            value={this.state.username}
-          />
+            <input
+              type="text"
+              onChange={this.handleUsername}
+              value={this.state.username}
+              placeholder="username"
+            />
+        <br></br>
+        <br></br>
           <input
             type="password"
-            on Change={this.handlePassword}
+            onChange={this.handlePassword}
+            placeholder="password"
           />
-
+        <br></br>
           <input
             type="submit"
             value="Submit"
