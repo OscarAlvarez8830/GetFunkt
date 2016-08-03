@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
 
   has_many(
     :songplaylists,
-    class: 'PlaylistSongs',
+    class_name: 'PlaylistSongs',
     primary_key: :id,
     foreign_key: :song_id
   )

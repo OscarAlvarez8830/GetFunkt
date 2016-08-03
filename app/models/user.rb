@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :songs
   has_many :playlists
-  # has_many :comments CHECK!!
+  # has_many :comments CHECK!! add in when comment model is up
 
   attr_reader :password
 
