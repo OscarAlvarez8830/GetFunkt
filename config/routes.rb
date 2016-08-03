@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :songs
+    resources :songs, only: [:create, :show, :update, :destroy]
+    get "/stream", to: "songs#stream", as: "stream"
+    get "/discover", to:"songs#discover", as: "discover"
     resources :playlists
     resources :comments
   end

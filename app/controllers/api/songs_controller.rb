@@ -15,10 +15,23 @@ class SongsController < ApplicationController
 
   end
 
-  def index
+  def stream
     user = User.find(params[:user_id])
-    @songs = user.songs
+    @songs = user.liked_songs
+    # CHECK!! liked_songs means I need to implement likes
     # CHECK!! will need to specify order and such
+  end
+
+  def discover
+    user = User.find(params[:user_id])
+
+    # songs that don't have current_user as a liker
+    # Likes will be a join table
+    # belongs_to :user
+    # belongs_to :song
+    # *Song* has_many :likers, through: :likes
+    # *User* has_many :liked_songs, through: :likes
+    # @songs = Song.where()
   end
 
   # CHECK!! will probably need other methods to specify by playlists

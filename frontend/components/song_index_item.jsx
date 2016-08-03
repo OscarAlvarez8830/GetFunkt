@@ -7,7 +7,10 @@ const SongActions = require('../actions/song_actions');
 const SongIndexItem = React.createClass({
 
   render() {
-    <audio>
-    </audio>
+
+    return (
+      <div>
+      </div>
+    );
   }
 });
