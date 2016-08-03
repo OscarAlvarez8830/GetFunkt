@@ -16,7 +16,6 @@ const App = React.createClass({
   greeting() {
     // CHECK!! this isn't rendering the way I'd like
     // logout button is showing up as soon as I render the login form
-    debugger
     if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
       return (
         <nav className="login-signup">
