@@ -2,12 +2,11 @@ class Song < ActiveRecord::Base
 
   validates :title, :artist, :user_id, presence: true
 
-  has_attached_file :audio, default_url: 'something.mp3'
-  validates_attachment_content_type :audio,
-    content_type: ['audio/mpeg', 'audio/mpg', 'audio/mp3', 'audio/mpeg3'],
-    message: 'File must be mp3 format'
+  has_attached_file :audio
+  validates_attachment_content_type(:audio, content_type: /\Aaudio/\/.*\Z/)
 
   belongs_to :user
+
   has_many(
     :songplaylists,
     class: 'PlaylistSongs',
@@ -20,5 +19,7 @@ class Song < ActiveRecord::Base
     through: :playlistsongs,
     source: :playlist
   )
+
+  has_many :comments, dependent: :destroy
 
 end

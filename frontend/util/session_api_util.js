@@ -1,12 +1,12 @@
 const SessionApiUtil = {
   logIn(user, success, errorHandler) {
-    debugger
     $.ajax({
       url: '/api/session',
       method: 'POST',
       data: { user },
       success,
       error: (xhr) => {
+        // CHECK!! make sure errors are rendered:
         // const errors = xhr.responseJSON;
         // errorHandler("login", errors);
         console.log(xhr);
