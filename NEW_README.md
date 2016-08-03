@@ -112,14 +112,14 @@ Phase 3 adds organization to the Songs. Songs are organized by whether the curre
 - [ ] Style new elements
 - [ ] Seed comments
 
-### Phase 5: Add Song Upload form, Clean Up Styling and Add Animation and WaveForm (1 day, W2 F 6pm)
+### Phase 5: Add Song Upload form, Clean Up Styling (1 day, W2 F 6pm)
 
 **objective:** Give users a song upload form, make sure all previous styling works together, animate user interactions.
 
 - [ ] Create form for uploading songs
 - [ ] Ensure uploaded songs are saved in database
 - [ ] Create new users, upload songs, and stress-test for slow performance and style clashes
-- [ ] Animate common actions (adding to playlist, removing from playlist, music player console)
+- [ ] Make the whole thing PRETTY
 
 ### Bonus: Add Waveform
 
