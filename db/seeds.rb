@@ -25,3 +25,34 @@ User.create!(
   username: "BeetsForDaze",
   password: "password"
 )
+
+
+Song.create!(
+  title: 'Something',
+  artist: 'Someone',
+  user_id: 1
+)
+
+Song.create!(
+  title: 'Something',
+  artist: 'Someone',
+  user_id: 1
+)
+
+Song.create!(
+  title: 'Something',
+  artist: 'Someone',
+  user_id: 1
+)
+
+Song.create!(
+  title: 'Something',
+  artist: 'Someone',
+  user_id: 1
+)
+
+Song.create!(
+  title: 'Something',
+  artist: 'Someone',
+  user_id: 1
+)

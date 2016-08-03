@@ -7,7 +7,6 @@ id          | integer   | not null, primary key
 title       | string    | not null
 artist      | string    | not null
 user_id     | integer   | not null, foreign key (references users), indexed
-playlist_id | integer   | not null, foreign key (references playlists), indexed
 <!-- Do I need anything else for music files?  -->
 
 ## playlists

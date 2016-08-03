@@ -58,7 +58,7 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 - [x] set up flux cycle for frontend auth
 - [x] user signup/signin components
 - [x] blank landing component after signin
-- [ ] style signin/signup components
+- [x] style signin/signup components
 - [x] seed users
 
 ### Phase 2: Song Model, API, and components (2 days, W1 Th 6pm)
@@ -66,7 +66,7 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 **Objective:** Songs can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Song` model
+- [x] create `Song` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for songs (`SongsController`)
 - [ ] jBuilder views for songs
@@ -84,7 +84,7 @@ the API.
 
 **Objective:** Songs belong to Playlists, and can be viewed by playlist.
 
-- [ ] create `Playlist` model
+- [x] create `Playlist` model
 - build out API, Flux loop, and components for:
   - [ ] Playlist CRUD
   - [ ] adding songs defaults to a user's library (home playlist)
