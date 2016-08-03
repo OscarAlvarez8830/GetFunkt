@@ -22,6 +22,7 @@ const App = React.createClass({
       <div>
         <header>
           <Link to="/" className="header-link"><h1>GetFunkt</h1></Link>
+          <h4>Music For You, By You</h4>
         </header>
         {this.props.children}
       </div>

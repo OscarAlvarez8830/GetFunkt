@@ -25,3 +25,17 @@ body {
   height: 500px;
   border: 5px solid orange;
 }
+
+header {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+h4 {
+  font-weight: 300;
+}
