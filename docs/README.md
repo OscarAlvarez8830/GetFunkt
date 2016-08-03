@@ -1,13 +1,13 @@
 # GetFunkt
 
-[Heroku link](http://getfunkt.herokuapp.com/) 
+[Heroku link](http://getfunkt.herokuapp.com/)
 
 ## Minimum Viable Product
 
 GetFunkt is a web application inspired by SoundCloud that will be built using Ruby on Rails and React.js.
 By the end of week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Songs

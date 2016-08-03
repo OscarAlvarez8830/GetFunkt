@@ -27,7 +27,7 @@ const LoginForm = React.createClass({
       return <li key={i}>{errorMsg}</li>;
     });
 
-    return <ul>{messages}</ul>;
+    return <ul id="login-errors">{ messages }</ul>;
   },
 
   formType() {
@@ -83,7 +83,7 @@ const LoginForm = React.createClass({
               value="Submit"
             />
             <br/>
-            <div id="login-errors">
+            <div>
               { this.errors() }
             </div>
           </form>

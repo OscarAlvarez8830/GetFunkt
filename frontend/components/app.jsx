@@ -23,7 +23,8 @@ const App = React.createClass({
           <Link to="/signup" activeClassName="current">Sign Up</Link>
         </nav>
       );
-    } else { // the problem is some unimplemented logic here, I'm sure
+    } else {
+      // need to see if someone is logged in or not
       return (
         <button onClick={this._handleLogOut}>Log Out</button>
       );
