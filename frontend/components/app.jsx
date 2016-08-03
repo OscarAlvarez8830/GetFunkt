@@ -14,7 +14,7 @@ const App = React.createClass({
   },
 
   greeting() {
-
+    // CHECK!!
   },
 
   render() {

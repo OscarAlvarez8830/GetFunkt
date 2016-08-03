@@ -26,6 +26,11 @@ body {
   border: 5px solid orange;
 }
 
+#login-errors {
+  list-style: none;
+  font-size: 12px;
+}
+
 header {
   display: block;
   margin: auto;

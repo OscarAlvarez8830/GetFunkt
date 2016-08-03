@@ -6,10 +6,8 @@ const SessionApiUtil = {
       data: { user },
       success,
       error: (xhr) => {
-        // CHECK!! make sure errors are rendered:
-        // const errors = xhr.responseJSON;
-        // errorHandler("login", errors);
-        console.log(xhr);
+        const errors = xhr.responseJSON;
+        errorHandler("login", errors); // ErrorActions.setErrors
       }
     });
   },

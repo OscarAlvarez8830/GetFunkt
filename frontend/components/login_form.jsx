@@ -22,7 +22,7 @@ const LoginForm = React.createClass({
   },
 
   errors() {
-    const errors = ErroStore.errors(this.formType());
+    const errors = ErrorStore.errors(this.formType());
     const messages = errors.map( (errorMsg, i) => {
       return <li key={i}>{errorMsg}</li>;
     });
@@ -60,27 +60,34 @@ const LoginForm = React.createClass({
   render () {
 
     return (
-      <div id="auth-form">
-        <form onSubmit={this.handleSubmit}>
+      <div className="auth-form-container">
+
+        <div id="auth-form">
+          <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                onChange={this.handleUsername}
+                value={this.state.username}
+                placeholder="username"
+              />
+            <br/>
+            <br/>
             <input
-              type="text"
-              onChange={this.handleUsername}
-              value={this.state.username}
-              placeholder="username"
+              type="password"
+              onChange={this.handlePassword}
+              placeholder="password"
             />
-        <br></br>
-        <br></br>
-          <input
-            type="password"
-            onChange={this.handlePassword}
-            placeholder="password"
-          />
-        <br></br>
-          <input
-            type="submit"
-            value="Submit"
-          />
-        </form>
+            <br/>
+            <input
+              type="submit"
+              value="Submit"
+            />
+            <br/>
+            <div id="login-errors">
+              { this.errors() }
+            </div>
+          </form>
+        </div>
       </div>
     );
 

@@ -1,6 +1,6 @@
 # GetFunkt
 
-# Link
+[Heroku link](http://getfunkt.herokuapp.com/) 
 
 ## Minimum Viable Product
 
