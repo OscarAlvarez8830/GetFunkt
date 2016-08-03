@@ -2,8 +2,8 @@ class Song < ActiveRecord::Base
 
   validates :title, :artist, :user_id, presence: true
 
-  has_attached_file :audio
-  validates_attachment_content_type(:audio, content_type: /\Aaudio/\/.*\Z/)
+  # has_attached_file :audio
+  # validates_attachment_content_type(:audio, content_type: /\Aaudio/\/.*\Z/)
 
   belongs_to :user
 
