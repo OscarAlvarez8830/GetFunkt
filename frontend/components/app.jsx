@@ -2,6 +2,7 @@ const React = require('react');
 const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
+const History = require('../history');
 
 const App = React.createClass({
 
@@ -11,13 +12,14 @@ const App = React.createClass({
 
   _handleLogOut() {
     SessionActions.logOut();
+    History.push("/");
   },
 
   greeting() {
     if ( ["/", "/login", "/signup"].includes(this.props.location.pathname) ) {
       return (
         <nav className="login-signup">
-          <Link to="/login" activeClassName="current">Login</Link>
+          <Link to="/login" activeClassName="current">Login </Link>
           <Link to="/signup" activeClassName="current">Sign Up</Link>
         </nav>
       );

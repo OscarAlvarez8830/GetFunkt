@@ -21,14 +21,7 @@ const SongsIndex = React.createClass({
 
   componentDidMount() {
     this.listener = SongStore.addListener(this.handleChange);
-  //   const action = this.feedType() === 'stream' ? SongActions.fetchStream : SongActions.fetchDiscover;
-  //   action();
   },
-  //
-  // componentWillReceiveProps(nextProps) {
-  //   const action = nextProps.location.pathname === '/stream' ? SongActions.fetchStream : SongActions.fetchDiscover;
-  //   action();
-  // },
 
   feedType() {
     return this.props.location.pathname.slice(1);
@@ -38,11 +31,16 @@ const SongsIndex = React.createClass({
     this.setState({songs: SongStore.all()});
   },
 
-  // componentWillUnmount() {
-  //   this.listener.remove();
-  // },
+  componentWillUnmount() {
+    this.listener.remove();
+  },
 
   render() {
+
+    // I'd like some logic here to render links for each feedType
+    // Always render both buttons in the index
+    // Highlight the current feedType
+
     return (
       <div className={this.feedType()}>
         <h3>{titleize(this.feedType())}</h3>

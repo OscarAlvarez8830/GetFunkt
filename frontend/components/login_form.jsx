@@ -19,6 +19,7 @@ const LoginForm = React.createClass({
   componentWillUnmount() {
     this.errorListener.remove();
     this.sessionListener.remove();
+    // ErrorStore.clearErrors();
   },
 
   errors() {
@@ -57,7 +58,11 @@ const LoginForm = React.createClass({
     }
   },
 
-  render () {
+  guestLogin() {
+    SessionActions.logIn({username: 'guest', password: 'password'});
+  },
+
+  render() {
 
     return (
       <div className="auth-form-container">
@@ -83,10 +88,13 @@ const LoginForm = React.createClass({
               value="Submit"
             />
             <br/>
+
+            <br/>
             <div>
               { this.errors() }
             </div>
           </form>
+          <button id="guest" onClick={this.guestLogin}>Guest</button>
         </div>
       </div>
     );

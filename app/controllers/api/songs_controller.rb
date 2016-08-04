@@ -12,6 +12,7 @@ class Api::SongsController < ApplicationController
   end
 
   def stream
+    # debugger
     @songs = current_user.liked_songs + current_user.songs
     render :index
   end

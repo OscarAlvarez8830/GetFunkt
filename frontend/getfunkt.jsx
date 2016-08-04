@@ -20,14 +20,6 @@ const routes = (
 );
 
 function fetchIndex(indexType) {
-  // switch(indexType) {
-  //   case 'stream':
-  //     SongActions.fetchStream();
-  //     break;
-  //   case 'discover':
-  //     SongActions.fetchDiscover();
-  //     break;
-  // }
   SongActions.fetchIndex(indexType);
 }
 
