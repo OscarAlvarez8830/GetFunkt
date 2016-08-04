@@ -14,16 +14,14 @@ const App = React.createClass({
   },
 
   greeting() {
-    // CHECK!! this isn't rendering the way I'd like
-    // logout button is showing up as soon as I render the login form
-    if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
+    if ( ["/", "/login", "/signup"].includes(this.props.location.pathname) ) {
       return (
         <nav className="login-signup">
           <Link to="/login" activeClassName="current">Login</Link>
           <Link to="/signup" activeClassName="current">Sign Up</Link>
         </nav>
       );
-    } else {
+    } else if (SessionStore.currentUserHasBeenFetched) {
       // need to see if someone is logged in or not
       return (
         <button onClick={this._handleLogOut}>Log Out</button>

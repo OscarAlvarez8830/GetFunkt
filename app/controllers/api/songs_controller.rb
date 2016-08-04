@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+class Api::SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
@@ -12,18 +12,15 @@ class SongsController < ApplicationController
   end
 
   def stream
-    user = User.find(params[:user_id])
-    @songs = user.liked_songs + user.songs
+    @songs = current_user.liked_songs + current_user.songs
     render :index
   end
 
   def discover
-    user = User.find(params[:user_id])
-
     # songs that don't have current_user as a liker
     # *Song* has_many :user_likes, through: :likes
     # *User* has_many :liked_songs, through: :likes
-    @songs = Song.join(:like).where.not(likes: { user_id: current_user.id } )
+    @songs = Song.joins(:likes).where.not(likes: { user_id: current_user.id } )
     # CHECK!! this query may be wrong
     # test when you have components live
     render :index

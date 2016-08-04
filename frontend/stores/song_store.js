@@ -14,9 +14,19 @@ SongStore.all = function () {
   return songs;
 };
 
+SongStore.resetSongs = function (songs) {
+  _songs = {};
+  songs.forEach((song) => {
+    _songs[song.id] = song;
+  });
+  SongStore.__emitChange();
+};
+
 SongStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
-
+    case SongConstants.SONGS_RECEIVED:
+      SongStore.resetSongs(payload.songs);
+      break;
   }
 };
 

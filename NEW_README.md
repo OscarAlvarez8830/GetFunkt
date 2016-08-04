@@ -75,7 +75,7 @@ the API.
 - [x] seed the database with a small amount of test data
 - [x] CRUD API for songs (`SongsController`)
 - [x] jBuilder views for songs
-- [ ] test out API interaction in the console.
+- [x] test out API interaction in the console.
 - implement each song component, building out the flux loop as needed.
   - [ ] `SongsIndex`
   - [ ] `SongIndexItem`
@@ -91,10 +91,10 @@ the API.
 
 - [x] create `Like` model
 - build out API, Flux loop, and components for:
-  - [ ] Like, Stream, and Discover CRUD
-  - [ ] liking a song will add it to your Stream
-  - [ ] songs not already liked will be in your Discover feed
-  - [ ] viewing songs by feed
+  - [x] Like, Stream, and Discover CRUD
+  - [x] liking a song will add it to your Stream
+  - [x] songs not already liked will be in your Discover feed
+  - [x] viewing songs by feed
 - [ ] Use CSS to style new components
 - [ ] Seed Likes
 

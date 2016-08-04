@@ -31,7 +31,6 @@ const LoginForm = React.createClass({
   },
 
   formType() {
-    debugger
     return this.props.location.pathname.slice(1);
   },
 
@@ -54,7 +53,7 @@ const LoginForm = React.createClass({
 
   redirectIfLoggedIn() {
     if (SessionStore.isUserLoggedIn()) {
-      History.push("/");
+      History.push("/stream");
     }
   },
 

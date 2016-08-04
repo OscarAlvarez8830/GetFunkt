@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :songs, only: [:create, :show, :update, :destroy]
     get "/stream", to: "songs#stream", as: "stream"
     get "/discover", to:"songs#discover", as: "discover"
-    resources :playlists
     resources :comments
   end
 

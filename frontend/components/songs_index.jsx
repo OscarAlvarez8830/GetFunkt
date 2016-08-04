@@ -7,7 +7,7 @@ function titleize(string) {
   let words = string.split(' ');
 
   words = words.map((word) => {
-    return word[0].toUpperCase();
+    return word[0].toUpperCase() + word.slice(1);
   });
 
   return words.join(' ');
@@ -20,10 +20,15 @@ const SongsIndex = React.createClass({
   },
 
   componentDidMount() {
-    SongStore.addListener(this.handleChange);
-    const action = this.feedType() === 'stream' ? SongAction.fetchStream : SongAction.fetchDiscover;
-    action();
+    this.listener = SongStore.addListener(this.handleChange);
+  //   const action = this.feedType() === 'stream' ? SongActions.fetchStream : SongActions.fetchDiscover;
+  //   action();
   },
+  //
+  // componentWillReceiveProps(nextProps) {
+  //   const action = nextProps.location.pathname === '/stream' ? SongActions.fetchStream : SongActions.fetchDiscover;
+  //   action();
+  // },
 
   feedType() {
     return this.props.location.pathname.slice(1);
@@ -33,9 +38,9 @@ const SongsIndex = React.createClass({
     this.setState({songs: SongStore.all()});
   },
 
-  componentWillUnmount() {
-    this.listener.remove();
-  },
+  // componentWillUnmount() {
+  //   this.listener.remove();
+  // },
 
   render() {
     return (
