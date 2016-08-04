@@ -14,3 +14,5 @@ const SongIndexItem = React.createClass({
     );
   }
 });
+
+module.exports = SongIndexItem;

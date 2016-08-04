@@ -92,7 +92,7 @@ the API.
 - [x] create `Like` model
 - build out API, Flux loop, and components for:
   - [ ] Like, Stream, and Discover CRUD
-  - [ ] liking a song will render it in your Stream
+  - [ ] liking a song will add it to your Stream
   - [ ] songs not already liked will be in your Discover feed
   - [ ] viewing songs by feed
 - [ ] Use CSS to style new components

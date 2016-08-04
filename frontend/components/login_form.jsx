@@ -31,6 +31,7 @@ const LoginForm = React.createClass({
   },
 
   formType() {
+    debugger
     return this.props.location.pathname.slice(1);
   },
 
