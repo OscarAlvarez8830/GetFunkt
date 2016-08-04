@@ -19,7 +19,7 @@ const LoginForm = React.createClass({
   componentWillUnmount() {
     this.errorListener.remove();
     this.sessionListener.remove();
-    // ErrorStore.clearErrors();
+
   },
 
   errors() {
