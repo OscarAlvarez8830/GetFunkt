@@ -7,7 +7,7 @@
 GetFunkt is a web application inspired by SoundCloud that will be built using Ruby on Rails and React.js.
 By the end of week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Songs
@@ -72,15 +72,14 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 the API.
 
 - [x] create `Song` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for songs (`SongsController`)
+- [x] seed the database with a small amount of test data
+- [x] CRUD API for songs (`SongsController`)
 - [x] jBuilder views for songs
 - [ ] test out API interaction in the console.
 - implement each song component, building out the flux loop as needed.
   - [ ] `SongsIndex`
   - [ ] `SongIndexItem`
   - [ ] `SongForm`
-- [ ] save Songs to the DB on submit
 - [ ] implement music player
 - [ ] style songs components
 - [ ] seed songs
@@ -119,6 +118,7 @@ Phase 3 adds organization to the Songs. Songs are organized by whether the curre
 - [ ] Create form for uploading songs
 - [ ] Ensure uploaded songs are saved in database
 - [ ] Create new users, upload songs, and stress-test for slow performance and style clashes
+- [ ] save Songs to the DB on submit
 - [ ] Make the whole thing PRETTY
 
 ### Bonus: Add Waveform

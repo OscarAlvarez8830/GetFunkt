@@ -6,8 +6,13 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :songs
-  has_many :playlists
-  # has_many :comments CHECK!! add in when comment model is up
+  has_many :likes
+  has_many(
+    :liked_songs,
+    through: :likes,
+    source: :song
+  )
+  has_many :comments # CHECK!! add in when comment model is up
 
   attr_reader :password
 

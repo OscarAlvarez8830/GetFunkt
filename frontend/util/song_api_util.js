@@ -1,17 +1,25 @@
 const SongApiUtil = {
-  fetchSongs(playlist, success) {
+  fetchStream(success) {
     $.ajax({
-      url: 'api/songs',
+      url: 'api/stream',
       method: 'GET',
       dataType: 'JSON',
-      // this indicates that if I use the index controller action,
-      // I need to specify a playlist argument
-      // otherwise I need a different url here, another controller action,
-      // and another route
-      data: { playlist },
       success
+      // CHECK!! make sure to handle errors
+    });
+  },
+
+  fetchDiscover(success) {
+    $.ajax({
+      url: 'api/discover',
+      method: 'GET',
+      dataType: 'JSON',
+      success
+      // CHECK!! make sure to handle errors
     });
   }
+
+  // CHECK!! WILL NEED MORE AJAX CALLS FOR INDIVIDUAL SONGS
 };
 
 module.exports = SongApiUtil;

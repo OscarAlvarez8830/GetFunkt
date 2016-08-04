@@ -9,50 +9,65 @@
 # User.create!(
 #   username: "guest",
 #   password: "password"
-# )
+# ) # id: 1
 #
 # User.create!(
 #   username: "MacDaddy",
 #   password: "password"
-# )
+# ) # id: 2
 #
 # User.create!(
 #   username: "DrJay",
 #   password: "password"
-# )
+# ) # id: 3
 #
 # User.create!(
 #   username: "BeetsForDaze",
 #   password: "password"
+# ) # id: 4
+
+
+# Song.create!(
+#   title: 'Something',
+#   artist: 'Someone',
+#   user_id: 1
+# ) # id: 1
+#
+# Song.create!(
+#   title: 'Something',
+#   artist: 'Someone',
+#   user_id: 1
+# ) # id: 2
+#
+# Song.create!(
+#   title: 'Something',
+#   artist: 'Someone',
+#   user_id: 2
+# ) # id: 3
+#
+# Song.create!(
+#   title: 'Something',
+#   artist: 'Someone',
+#   user_id: 3
+# ) # id: 4
+
+# Song.create!(
+#   title: 'Something',
+#   artist: 'Someone',
+#   user_id: 4
 # )
 
+Like.create!(
+  user_id: 1,
+  song_id: 4
+) # id: 1
 
-Song.create!(
-  title: 'Something',
-  artist: 'Someone',
-  user_id: 1
-)
+Like.create!(
+  user_id: 2,
+  song_id: 1
+) # id: 2
 
-Song.create!(
-  title: 'Something',
-  artist: 'Someone',
-  user_id: 1
-)
-
-Song.create!(
-  title: 'Something',
-  artist: 'Someone',
-  user_id: 1
-)
-
-Song.create!(
-  title: 'Something',
-  artist: 'Someone',
-  user_id: 1
-)
-
-Song.create!(
-  title: 'Something',
-  artist: 'Someone',
-  user_id: 1
-)
+# Like.create!(
+#   user_id: 1,
+#   song_id: 1
+# ) # id: 3

@@ -1,10 +1,6 @@
 class SongsController < ApplicationController
 
   def create
-    # CHECK!!
-    # the form that reaches this should also handle adding to a playlist
-    # that should reach the PlayListSongs controller to create the association
-
     @song = Song.new(song_params)
 
     if @song.save
@@ -17,21 +13,20 @@ class SongsController < ApplicationController
 
   def stream
     user = User.find(params[:user_id])
-    @songs = user.liked_songs
-    # CHECK!! liked_songs means I need to implement likes
-    # CHECK!! will need to specify order and such
+    @songs = user.liked_songs + user.songs
+    render :index
   end
 
   def discover
     user = User.find(params[:user_id])
 
     # songs that don't have current_user as a liker
-    # Likes will be a join table
-    # belongs_to :user
-    # belongs_to :song
-    # *Song* has_many :likers, through: :likes
+    # *Song* has_many :user_likes, through: :likes
     # *User* has_many :liked_songs, through: :likes
-    # @songs = Song.where()
+    @songs = Song.join(:like).where.not(likes: { user_id: current_user.id } )
+    # CHECK!! this query may be wrong
+    # test when you have components live
+    render :index
   end
 
   # CHECK!! will probably need other methods to specify by playlists

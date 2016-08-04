@@ -3,21 +3,15 @@ class Song < ActiveRecord::Base
   validates :title, :artist, :user_id, presence: true
 
   has_attached_file :audio
-  validates_attachment_content_type :audio, content_type: /\Aaudio\/.*\Z/
+  validates_attachment_content_type :audio, content_type: ['application/mp3', 'application/x-mp3', 'audio/mpeg', ['audio/mpeg'], 'audio/mp3']
 
   belongs_to :user
 
+  has_many :likes
   has_many(
-    :songplaylists,
-    class_name: 'PlaylistSongs',
-    primary_key: :id,
-    foreign_key: :song_id
-  )
-
-  has_many(
-    :playlists,
-    through: :playlistsongs,
-    source: :playlist
+    :user_likes,
+    through: :likes,
+    source: :user
   )
 
   has_many :comments, dependent: :destroy
