@@ -15,7 +15,7 @@
 node_modules/
 app/assets/javascripts/bundle.js
 app/assets/javascripts/bundle.js.map
-app/assets/song_seeds
+app/assets/
 
 # Ignore application configuration
 /config/application.yml
