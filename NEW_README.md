@@ -8,7 +8,7 @@ GetFunkt is a web application inspired by SoundCloud that will be built using Ru
 By the end of week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [x] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Songs
   - [ ] Smooth, bug-free navigation
@@ -98,7 +98,7 @@ the API.
 - [ ] Use CSS to style new components
 - [ ] Seed Likes
 
-Phase 3 adds organization to the Songs. Songs are organized by whether the current user likes them, which populates which has the song 'Index' view.
+Phase 3 adds organization to the Songs. Songs are organized by whether the current user likes them, which populates song 'Index' view.
 
 ### Phase 4: Comments (1 day, W2 Th 6pm)
 

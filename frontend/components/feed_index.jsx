@@ -1,4 +1,5 @@
 const React = require('react');
+const Link = require('react-router').Link;
 
 const FeedIndex = React.createClass({
 
@@ -7,15 +8,19 @@ const FeedIndex = React.createClass({
   },
 
   clickHandler(feedType) {
-    this.setState( feedType === 'discover' ? 'discover' : 'stream');
+    this.setState( { feed: feedType === 'discover' ? 'discover' : 'stream' });
   },
 
   render() {
     return (
       <div className="feed-index">
         <ul className="feed-list">
-          <li className="feed-list-item" onClick={this.clickHandler.bind(null, 'stream')}>Stream</li>
-          <li className="feed-list-item" onClick={this.clickHandler.bind(null, 'discover')}>Discover</li>
+          <li className="feed-list-item">
+            <Link to="/stream">Stream</Link>
+          </li>
+          <li className="feed-list-item">
+            <Link to="/discover">Discover</Link>
+          </li>
         </ul>
         {this.props.children}
       </div>

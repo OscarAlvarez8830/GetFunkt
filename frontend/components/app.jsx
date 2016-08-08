@@ -16,17 +16,16 @@ const App = React.createClass({
   },
 
   greeting() {
-    if ( ["/", "/login", "/signup"].includes(this.props.location.pathname) ) {
+    if (SessionStore.currentUserHasBeenFetched()) {
+      return (
+        <button onClick={this._handleLogOut}>Log Out</button>
+      );
+    } else {
       return (
         <nav className="login-signup">
           <Link to="/login" activeClassName="current">Login </Link>
           <Link to="/signup" activeClassName="current">Sign Up</Link>
         </nav>
-      );
-    } else if (SessionStore.currentUserHasBeenFetched) {
-      // need to see if someone is logged in or not
-      return (
-        <button onClick={this._handleLogOut}>Log Out</button>
       );
     }
   },

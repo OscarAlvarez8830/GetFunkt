@@ -48,7 +48,7 @@ const SongsIndex = React.createClass({
           {
             this.state.songs.map((song, idx) => {
               return <li key={idx} className="song-item">
-                <SongIndexItem song={song} />
+                <SongIndexItem feedType={this.feedType()} song={song} />
               </li>;
             })
           }

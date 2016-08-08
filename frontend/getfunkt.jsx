@@ -16,6 +16,7 @@ const routes = (
     <Route path="/login" component={LoginForm} />
     <Route path="/signup" component={LoginForm} />
     <Route path="feeds" onEnter={fetchIndex.bind(null, 'stream')} component={FeedIndex} >
+      <IndexRoute onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
       <Route path="/stream" onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
       <Route path="/discover" onEnter={fetchIndex.bind(null, 'discover')} component={SongsIndex} />
     </Route>
