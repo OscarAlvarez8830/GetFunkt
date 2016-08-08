@@ -6,6 +6,7 @@ const ReactDOM = require('react-dom');
 const Modal = require('react-modal');
 const App = require('./components/app');
 const LoginPage = require('./components/login_page');
+const SessionActions = require('./actions/session_actions');
 const SessionStore = require('./stores/session_store');
 const SongsIndex = require('./components/songs_index');
 const SongActions = require('./actions/song_actions');
@@ -40,7 +41,11 @@ function _ensureLoggedIn(nextState, replace) {
   }
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.currentUser) {
+    SessionActions.receiveCurrentUser(window.currentUser);
+  }
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(appRouter, root);

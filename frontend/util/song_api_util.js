@@ -1,34 +1,4 @@
 const SongApiUtil = {
-  // fetchStream(cb) {
-  //   $.ajax({
-  //     url: 'api/stream',
-  //     method: 'GET',
-  //     dataType: 'JSON',
-  //     success: (songs) => {
-  //       cb(songs);
-  //     },
-  //     error: (error) => {
-  //       console.log(error.responseText);
-  //     }
-  //     // CHECK!! make sure to handle errors
-  //   });
-  // },
-  //
-  // fetchDiscover(cb) {
-  //   $.ajax({
-  //     url: 'api/discover',
-  //     method: 'GET',
-  //     dataType: 'JSON',
-  //     success: (songs) => {
-  //       cb(songs);
-  //     },
-  //     error: (error) => {
-  //       console.log(error.responseText);
-  //     }
-  //
-  //     // CHECK!! make sure to handle errors
-  //   });
-  // }
 
   fetchIndex(feedType, successCB) {
     $.ajax({
@@ -43,9 +13,22 @@ const SongApiUtil = {
         // CHECK!! properly handle errors
       }
     });
+  },
+
+  getSong(songId, successCB) {
+    $.ajax({
+      url: `api/songs/${songId}`,
+      method: 'GET',
+      dataType: 'JSON',
+      success: (song) => {
+        successCB(song);
+      },
+      error: (error) => {
+        console.log(error.responseText);
+      }
+    });
   }
 
-  // CHECK!! WILL NEED MORE AJAX CALLS FOR INDIVIDUAL SONGS
 };
 
 module.exports = SongApiUtil;

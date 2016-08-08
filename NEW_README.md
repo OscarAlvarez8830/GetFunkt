@@ -77,7 +77,7 @@ the API.
 - [x] jBuilder views for songs
 - [x] test out API interaction in the console.
 - implement each song component, building out the flux loop as needed.
-  - [ ] `SongsIndex`
+  - [x] `SongsIndex`
   - [ ] `SongIndexItem`
   - [ ] `SongForm`
 - [ ] implement music player

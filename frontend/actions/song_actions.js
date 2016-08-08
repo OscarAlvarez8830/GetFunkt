@@ -20,6 +20,17 @@ const SongActions = {
       actionType: SongConstants.SONGS_RECEIVED,
       songs: songs
     });
+  },
+
+  getSong(songId) {
+    SongApiUtil.getSong(songId, SongActions.receiveCurrentSong);
+  },
+
+  receiveCurrentSong(song) {
+    AppDispatcher.dispatch({
+      actionType: SongConstants.SONG_RECEIVED,
+      song: song
+    });
   }
 };
 

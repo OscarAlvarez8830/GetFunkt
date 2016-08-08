@@ -10,15 +10,15 @@ const ModalStyle = require('../modal_style');
 const App = React.createClass({
 
   getInitialState() {
-    return({ logged_in: SessionStore.currentUserHasBeenFetched() });
+    return({ logged_in: SessionStore.currentUserHasBeenFetched(), currentSong: null });
   },
 
   componentDidMount() {
-    this.listener = SessionStore.addListener(this.forceUpdate.bind(this));
+    this.sessionListener = SessionStore.addListener(this.forceUpdate.bind(this));
   },
 
   componentWillUnmount() {
-    this.listener.remove();
+    this.sessionListener.remove();
   },
 
   _handleLogOut() {
@@ -50,6 +50,8 @@ const App = React.createClass({
         </nav>
 
         { this.props.children }
+
+        <audio id="audio-player" />
       </div>
     );
   }
