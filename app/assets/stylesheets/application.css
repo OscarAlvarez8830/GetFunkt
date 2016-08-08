@@ -14,6 +14,22 @@
  *= require_self
  */
 
+ html, body, header, nav, h1, a, ul, li,
+ strong, main, section, img, div, h2, p,
+ form, fieldset, label, input, textarea,
+ button, article, footer, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   background: transparent;
+ }
+
 body {
   font-family: 'Lucida Grande', sans-serif;
 }
@@ -38,9 +54,33 @@ header {
 }
 
 h1 {
+  font-size: 36px;
   font-weight: 500;
 }
 
 h4 {
   font-weight: 300;
+}
+
+.input {
+  padding: 5px 10px;
+  border: #ccc;
+  border-radius: 5px;
+}
+
+.feed-index {
+  float: left;
+}
+
+.feed-list {
+  display: block;
+  float: left;
+}
+
+.feed-list-item {
+  display: block;
+  float: left;
+  font-size: 24px;
+  padding: 20px;
+  border:
 }

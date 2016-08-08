@@ -8,15 +8,18 @@ const LoginForm = require('./components/login_form');
 const SessionStore = require('./stores/session_store');
 const SongsIndex = require('./components/songs_index');
 const SongActions = require('./actions/song_actions');
+const FeedIndex = require('./components/feed_index');
 
 
 const routes = (
   <Route path="/" component={App} >
     <Route path="/login" component={LoginForm} />
     <Route path="/signup" component={LoginForm} />
-    <Route path="/stream" onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
-    <Route path="/discover" onEnter={fetchIndex.bind(null, 'discover')} component={SongsIndex} />
-  </Route>
+    <Route path="feeds" onEnter={fetchIndex.bind(null, 'stream')} component={FeedIndex} >
+      <Route path="/stream" onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
+      <Route path="/discover" onEnter={fetchIndex.bind(null, 'discover')} component={SongsIndex} />
+    </Route>
+</Route>
 );
 
 function fetchIndex(indexType) {
