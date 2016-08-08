@@ -1,4 +1,5 @@
 const React = require('react');
+const Modal = require('react-modal');
 const Link = require('react-router').Link;
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
@@ -23,16 +24,12 @@ const LoginForm = React.createClass({
   },
 
   errors() {
-    const errors = ErrorStore.errors(this.formType());
+    const errors = ErrorStore.errors(this.props.formType);
     const messages = errors.map( (errorMsg, i) => {
       return <li key={i}>{errorMsg}</li>;
     });
 
     return <ul id="login-errors">{ messages }</ul>;
-  },
-
-  formType() {
-    return this.props.location.pathname.slice(1);
   },
 
   handleUsername(e) {
@@ -45,8 +42,9 @@ const LoginForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.location.pathname === "/login") {
+    if (this.props.formType === "login") {
       SessionActions.logIn(this.state);
+      History.push("/stream");
     } else {
       SessionActions.signUp(this.state);
     }
@@ -65,35 +63,36 @@ const LoginForm = React.createClass({
   render() {
 
     return (
-      <div className="auth-form-container">
+        <div className="auth-form-container">
 
-        <div id="auth-form">
-          <form onSubmit={this.handleSubmit}>
+          <div id="auth-form group">
+            <form onSubmit={this.handleSubmit}>
+                <input
+                  className="input"
+                  type="text"
+                  onChange={this.handleUsername}
+                  value={this.state.username}
+                  placeholder="username"
+                />
+
               <input
                 className="input"
-                type="text"
-                onChange={this.handleUsername}
-                value={this.state.username}
-                placeholder="username"
+                type="password"
+                onChange={this.handlePassword}
+                placeholder="password"
               />
-
-            <input
-              className="input"
-              type="password"
-              onChange={this.handlePassword}
-              placeholder="password"
-            />
-            <input
-              type="submit"
-              value="Submit"
-            />
-            <div>
-              { this.errors() }
-            </div>
-          </form>
-          <button id="guest" onClick={this.guestLogin}>Guest</button>
+              <input
+                className="submit"
+                type="submit"
+                value="Submit"
+              />
+              <div>
+                { this.errors() }
+              </div>
+            </form>
+            <button id="guest" onClick={this.guestLogin}>Guest</button>
+          </div>
         </div>
-      </div>
     );
 
   }

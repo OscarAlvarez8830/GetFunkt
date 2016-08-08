@@ -13,7 +13,10 @@ class Api::SongsController < ApplicationController
 
   def stream
     # debugger
-    @songs = current_user.liked_songs + current_user.songs
+    liked_songs = current_user.liked_songs
+    songs = current_user.songs
+    # debugger
+    @songs = liked_songs + songs
     render :index
   end
 
@@ -21,7 +24,11 @@ class Api::SongsController < ApplicationController
     # songs that don't have current_user as a liker
     # *Song* has_many :user_likes, through: :likes
     # *User* has_many :liked_songs, through: :likes
-    @songs = Song.joins(:likes).where.not(likes: { user_id: current_user.id } )
+    # @songs = Song.joins(:likes).where.not(likes: { user_id: current_user.id } )
+    @songs = Song.where.not(user_id: current_user.id)
+    # @songs = songs.where.not(song: current_user.liked_songs)
+    # @songs = songs.joins('LEFT OUTER JOIN like')
+      # .where.not(likes: {user_id: current_user.id})
     # CHECK!! this query may be wrong
     # test when you have components live
     render :index

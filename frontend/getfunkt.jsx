@@ -3,24 +3,30 @@ import { Router, Route, IndexRoute, Link } from 'react-router';
 const History = require('./history');
 const React = require('react');
 const ReactDOM = require('react-dom');
+const Modal = require('react-modal');
 const App = require('./components/app');
-const LoginForm = require('./components/login_form');
+const LoginPage = require('./components/login_page');
 const SessionStore = require('./stores/session_store');
 const SongsIndex = require('./components/songs_index');
 const SongActions = require('./actions/song_actions');
 const FeedIndex = require('./components/feed_index');
 
 
-const routes = (
-  <Route path="/" component={App} >
-    <Route path="/login" component={LoginForm} />
-    <Route path="/signup" component={LoginForm} />
-    <Route path="feeds" onEnter={fetchIndex.bind(null, 'stream')} component={FeedIndex} >
-      <IndexRoute onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
-      <Route path="/stream" onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
-      <Route path="/discover" onEnter={fetchIndex.bind(null, 'discover')} component={SongsIndex} />
+const appRouter = (
+  <Router history={History}>
+    <Route path="/" onEnter={_ensureLoggedIn} component={App} >
+
+      <Route path="feeds" onEnter={fetchIndex.bind(null, 'stream')} component={FeedIndex} >
+        <IndexRoute onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
+        <Route path="/stream" onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
+        <Route path="/discover" onEnter={fetchIndex.bind(null, 'discover')} component={SongsIndex} />
+      </Route>
+
     </Route>
-</Route>
+
+    <Route path="/login" component={LoginPage} />
+    <Route path="/signup" component={LoginPage} />
+  </Router>
 );
 
 function fetchIndex(indexType) {
@@ -35,6 +41,7 @@ function _ensureLoggedIn(nextState, replace) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  Modal.setAppElement(document.body);
   const root = document.getElementById('root');
-  ReactDOM.render(<Router history={History} routes={routes} />, root);
+  ReactDOM.render(appRouter, root);
 });

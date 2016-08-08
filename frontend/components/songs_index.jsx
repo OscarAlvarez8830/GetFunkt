@@ -21,6 +21,7 @@ const SongsIndex = React.createClass({
 
   componentDidMount() {
     this.listener = SongStore.addListener(this.handleChange);
+    SongActions.fetchIndex(this.feedType());
   },
 
   feedType() {
@@ -36,6 +37,7 @@ const SongsIndex = React.createClass({
   },
 
   render() {
+    // debugger
 
     // I'd like some logic here to render links for each feedType
     // Always render both buttons in the index

@@ -30,16 +30,22 @@
    background: transparent;
  }
 
+ .group:after {
+   content: "";
+   display: block;
+   clear: both;
+ }
+
 body {
+  box-sizing: content-box;
   font-family: 'Lucida Grande', sans-serif;
 }
 
 #auth-form {
   display: block;
   margin: auto;
-  width: 300px;
-  height: 500px;
-  border: 5px solid orange;
+  /*width: 300px;
+  height: 500px;*/
 }
 
 #login-errors {
@@ -64,8 +70,10 @@ h4 {
 
 .input {
   padding: 5px 10px;
-  border: #ccc;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 10px;
+  background: white;
 }
 
 .feed-index {
@@ -83,4 +91,35 @@ h4 {
   font-size: 24px;
   padding: 20px;
   border:
+}
+
+.submit {
+  width: 100px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 200px;
+  padding: 10px 40px;
+  color: white;
+  background: #FF530D;
+  border-radius: 4px;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+#guest {
+  margin: 0 auto;
+  width: 100px;
+  font-size: 14px;
+  font-weight: 200px;
+  padding: 10px 40px;
+  color: white;
+  background: #FF530D;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+button:hover {
+  cursor: pointer;
 }

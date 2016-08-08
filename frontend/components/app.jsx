@@ -1,46 +1,52 @@
 const React = require('react');
+const Modal = require('react-modal');
 const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 const History = require('../history');
+const LoginForm = require('./login_form');
+const ModalStyle = require('../modal_style');
 
 const App = React.createClass({
 
+  getInitialState() {
+    return({ logged_in: SessionStore.currentUserHasBeenFetched() });
+  },
+
   componentDidMount() {
-    SessionStore.addListener(this.forceUpdate.bind(this));
+    this.listener = SessionStore.addListener(this.forceUpdate.bind(this));
+  },
+
+  componentWillUnmount() {
+    this.listener.remove();
   },
 
   _handleLogOut() {
     SessionActions.logOut();
-    History.push("/");
+    this.setState({ logged_in: false });
+    History.push("/login");
   },
 
-  greeting() {
+  logOut() {
     if (SessionStore.currentUserHasBeenFetched()) {
       return (
         <button onClick={this._handleLogOut}>Log Out</button>
       );
-    } else {
-      return (
-        <nav className="login-signup">
-          <Link to="/login" activeClassName="current">Login </Link>
-          <Link to="/signup" activeClassName="current">Sign Up</Link>
-        </nav>
-      );
     }
+
   },
 
   render() {
     return (
       <div>
-        <section id="auth-buttons">
-          { this.greeting() }
-        </section>
 
-        <header>
-          <Link to="/" className="header-link"><h1>GetFunkt</h1></Link>
-          <h4>Music For You, By You</h4>
-        </header>
+        <nav className="nav-bar group">
+          <Link to="/stream">Home</Link>
+          <Link to="/upload">Upload</Link>
+
+          { this.logOut() }
+        </nav>
+
         { this.props.children }
       </div>
     );

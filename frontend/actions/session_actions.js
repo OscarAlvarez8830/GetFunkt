@@ -2,7 +2,7 @@ const AppDispatcher = require('../dispatcher/dispatcher');
 const SessionApiUtil = require('../util/session_api_util');
 const SessionConstants = require('../constants/session_constants');
 const ErrorActions = require('./error_actions');
-const hashHistory = require('react-router').hashHistory;
+const History = require('../history');
 
 const SessionActions = {
   signUp(formData) {
@@ -19,6 +19,7 @@ const SessionActions = {
       SessionActions.receiveCurrentUser,
       ErrorActions.setErrors
     );
+    History.push('/stream');
   },
 
   logOut() {
@@ -42,7 +43,7 @@ const SessionActions = {
     AppDispatcher.dispatch({
       actionType: SessionConstants.LOGOUT
     });
-    hashHistory.push("/login");
+
   }
 };
 

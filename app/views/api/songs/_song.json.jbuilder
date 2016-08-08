@@ -1,4 +1,4 @@
-json.extract! song, :title, :artist
+json.extract! song, :title, :artist, :id
 
 # CHECK!! audio file stuff
 json.audio_url asset_path(song.audio.url)
