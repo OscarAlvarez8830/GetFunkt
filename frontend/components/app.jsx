@@ -30,7 +30,7 @@ const App = React.createClass({
   logOut() {
     if (SessionStore.currentUserHasBeenFetched()) {
       return (
-        <button onClick={this._handleLogOut}>Log Out</button>
+        <li className="nav-list-item"><button onClick={this._handleLogOut}>Log Out</button></li>
       );
     }
 
@@ -38,13 +38,15 @@ const App = React.createClass({
 
   render() {
     return (
-      <div>
+      <div id="app">
 
         <nav className="nav-bar group">
-          <Link to="/stream">Home</Link>
-          <Link to="/upload">Upload</Link>
+          <ul className="nav-list group" >
+            <li className="nav-list-item"><Link to="/stream">Home</Link></li>
+            <li className="nav-list-item"><Link to="/upload">Upload</Link></li>
 
-          { this.logOut() }
+            { this.logOut() }
+          </ul>
         </nav>
 
         { this.props.children }

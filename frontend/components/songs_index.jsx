@@ -36,16 +36,21 @@ const SongsIndex = React.createClass({
     this.listener.remove();
   },
 
-  render() {
-    // debugger
+  welcomeMessage() {
+    if (this.feedType() === 'stream') {
+      return <h4 id="welcome-message">Listen to your favorite songs:</h4>;
+    } else {
+      return <h4 id="welcome-message">Check out music from other users:</h4>;
+    }
+  },
 
-    // I'd like some logic here to render links for each feedType
-    // Always render both buttons in the index
+  render() {
+
     // Highlight the current feedType
 
     return (
-      <div className={this.feedType()}>
-        <h3>{titleize(this.feedType())}</h3>
+      <div className="song-index">
+        {this.welcomeMessage()}
         <ul>
           {
             this.state.songs.map((song, idx) => {

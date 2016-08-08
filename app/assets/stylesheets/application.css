@@ -39,11 +39,20 @@
 body {
   box-sizing: content-box;
   font-family: 'Lucida Grande', sans-serif;
+  background: #f2f2f2;
+}
+
+#app {
+  background: white;
+  width: 1216px;
+  height: 1695px;
+  margin: 0 auto;
+  padding: 0 100px;
 }
 
 #auth-form {
-  display: block;
-  margin: auto;
+  /*display: block;
+  margin: auto;*/
   /*width: 300px;
   height: 500px;*/
 }
@@ -57,6 +66,10 @@ header {
   display: block;
   margin: auto;
   text-align: center;
+}
+
+ul {
+  list-style: none;
 }
 
 h1 {
@@ -78,19 +91,24 @@ h4 {
 
 .feed-index {
   float: left;
+
+  margin: 20px 0;
 }
 
 .feed-list {
+  width: 350px;
   display: block;
   float: left;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 20px 0;
 }
 
 .feed-list-item {
+  width: 175px;
   display: block;
   float: left;
   font-size: 24px;
-  padding: 20px;
-  border:
+  text-align: left;
 }
 
 .submit {
@@ -122,4 +140,49 @@ h4 {
 
 button:hover {
   cursor: pointer;
+}
+
+.nav_bar {
+}
+
+.nav-list {
+  /*width: 900px;
+  margin: 0 auto;*/
+  background: #333;
+  list-style: none;
+  display: block;
+  float: left;
+}
+
+.nav-list-item {
+  font-weight: 200;
+  font-size: 14px;
+  color: #ccc;
+  padding: 12px 0;
+  display: block;
+  float: left;
+  height: 46px;
+  width: 104px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.song-index {
+
+}
+
+.song-index:first-child {
+  margin: 20px 0 0 0;
+}
+
+.song-item {
+  display: block;
+  padding: 10px 0;
+  margin: 20px 0 0 0;
+}
+
+#welcome-message {
+  color: #aaa;
+  font-size: 16px;
+  font-weight: 200;
 }
