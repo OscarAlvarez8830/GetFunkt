@@ -6,14 +6,19 @@ const SongActions = require('../actions/song_actions');
 
 const SongIndexItem = React.createClass({
 
+  handleClick(e) {
+    e.preventDefault();
+
+    SongActions.getSong(this.props.song.id);
+  },
+
   render() {
     const song = this.props.song;
     //CHECK!! this will need to become a link to start playing the song
-    // it can always be in that state; no need to trn it off when it starts playing
+    // it can always be in that state; no need to turn it off when it starts playing
     return (
-      <div>
+      <div onClick={this.handleClick}>
         {song.title}
-          <br/>
         {song.artist}
       </div>
     );

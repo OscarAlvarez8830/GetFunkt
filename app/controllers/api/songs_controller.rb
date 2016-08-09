@@ -11,6 +11,10 @@ class Api::SongsController < ApplicationController
 
   end
 
+  def show
+    @song = Song.find(params[:id].to_i)
+  end
+
   def stream
     # debugger
     liked_songs = current_user.liked_songs

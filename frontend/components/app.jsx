@@ -3,6 +3,7 @@ const Modal = require('react-modal');
 const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
+const SongStore = require('../stores/song_store');
 const History = require('../history');
 const LoginForm = require('./login_form');
 const ModalStyle = require('../modal_style');
@@ -10,15 +11,21 @@ const ModalStyle = require('../modal_style');
 const App = React.createClass({
 
   getInitialState() {
-    return({ logged_in: SessionStore.currentUserHasBeenFetched(), currentSong: null });
+    return({ logged_in: SessionStore.currentUserHasBeenFetched(), currentSong: {} });
   },
 
   componentDidMount() {
     this.sessionListener = SessionStore.addListener(this.forceUpdate.bind(this));
+    this.songListener = SongStore.addListener(this.playCurrentSong);
+  },
+
+  playCurrentSong() {
+    this.setState({currentSong: SongStore.currentSong()});
   },
 
   componentWillUnmount() {
     this.sessionListener.remove();
+    this.songListener.remove();
   },
 
   _handleLogOut() {
@@ -50,8 +57,8 @@ const App = React.createClass({
         </nav>
 
         { this.props.children }
+        <audio id="audio-player" src={this.state.currentSong.audio_url}/>
 
-        <audio id="audio-player" />
       </div>
     );
   }

@@ -5,6 +5,7 @@ const SongConstants = require('../constants/song_constants');
 const SongStore = new Store(AppDispatcher);
 
 let _songs = {};
+let _currentSong = {};
 
 SongStore.all = function () {
   const songs = [];
@@ -22,10 +23,22 @@ SongStore.resetSongs = function (songs) {
   SongStore.__emitChange();
 };
 
+SongStore.playSong = function (song) {
+  _currentSong = song;
+  SongStore.__emitChange();
+};
+
+SongStore.currentSong = function () {
+  return _currentSong;
+};
+
 SongStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case SongConstants.SONGS_RECEIVED:
       SongStore.resetSongs(payload.songs);
+      break;
+    case SongConstants.SONG_RECEIVED:
+      SongStore.playSong(payload.song);
       break;
   }
 };

@@ -3,16 +3,6 @@ const SongActions = require('../actions/song_actions');
 const SongStore = require('../stores/song_store');
 const SongIndexItem = require('./song_index_item');
 
-function titleize(string) {
-  let words = string.split(' ');
-
-  words = words.map((word) => {
-    return word[0].toUpperCase() + word.slice(1);
-  });
-
-  return words.join(' ');
-}
-
 const SongsIndex = React.createClass({
 
   getInitialState() {
