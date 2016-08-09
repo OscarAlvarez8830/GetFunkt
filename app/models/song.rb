@@ -14,6 +14,6 @@ class Song < ActiveRecord::Base
     source: :user
   )
 
-  has_many :comments, dependent: :destroy
+  # has_many :comments, dependent: :destroy
 
 end

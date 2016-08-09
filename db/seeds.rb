@@ -28,31 +28,31 @@ User.create!(
 
 
 Song.create!(
-  title: 'Something',
+  title: 'First',
   artist: 'Someone',
   user_id: 1
 ) # id: 1
 
 Song.create!(
-  title: 'Something',
+  title: 'Second',
   artist: 'Someone',
   user_id: 1
 ) # id: 2
 
 Song.create!(
-  title: 'Something',
+  title: 'Third',
   artist: 'Someone',
   user_id: 2
 ) # id: 3
 
 Song.create!(
-  title: 'Something',
+  title: 'Fourth',
   artist: 'Someone',
   user_id: 3
 ) # id: 4
 
 Song.create!(
-  title: 'Something',
+  title: 'Fifth',
   artist: 'Someone',
   user_id: 4
 )

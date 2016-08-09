@@ -57,7 +57,11 @@ const App = React.createClass({
         </nav>
 
         { this.props.children }
-        <audio id="audio-player" src={this.state.currentSong.audio_url}/>
+
+        <audio id="audio-player"
+          src={this.state.currentSong.audio_url}
+          controls="controls"
+          />
 
       </div>
     );
