@@ -44,15 +44,22 @@ const LoginPage = React.createClass({
       <div>
 
         <header>
-          <Link to="/" className="header-link"><h1>GetFunkt</h1></Link>
-          <h4>Music For You, By You</h4>
+          <img id="welcome-image group"
+            src={GetFunktAssets.welcomeImage}
+            height="1200px"
+            >
+          </img>
+          <div className="header-link">
+            <Link to="/"><h1>GetFunkt</h1></Link>
+            <h4>Music For You, By You</h4>
+          </div>
         </header>
 
         <section className="auth-buttons">
           <div>
             <nav className="login-signup">
-              <button onClick={this._handleClick.bind(this, true)}>Login </button>
-              <button onClick={this._handleClick.bind(this, false)}>Sign Up</button>
+              <button id="login" onClick={this._handleClick.bind(this, true)}>Login </button>
+              <button id="signup" onClick={this._handleClick.bind(this, false)}>Create Account</button>
             </nav>
             <Modal
               isOpen={this.state.modalOpen}

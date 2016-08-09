@@ -3,6 +3,10 @@
       window.currentUser = <%= render("api/users/user.json.jbuilder",
       user: current_user).html_safe %>
   <% end %>
+
+  window.GetFunktAssets = {
+    welcomeImage: "<%= asset_path("photo-1462146449396-2d7d4ba877d7.jpeg")%>"
+  };
 </script>
 
 <main id="root"></main>

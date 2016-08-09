@@ -82,7 +82,7 @@ const LoginForm = React.createClass({
                 placeholder="password"
               />
               <input
-                className="submit"
+                className="login-button"
                 type="submit"
                 value="Submit"
               />
@@ -90,7 +90,7 @@ const LoginForm = React.createClass({
                 { this.errors() }
               </div>
             </form>
-            <button id="guest" onClick={this.guestLogin}>Guest</button>
+            <button className="login-button" onClick={this.guestLogin}>Guest</button>
           </div>
         </div>
     );
