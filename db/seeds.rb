@@ -5,66 +5,70 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
 
-User.create!(
+user1 = User.create!(
   username: "guest",
   password: "password"
 ) # id: 1
 
-User.create!(
+user2 = User.create!(
   username: "MacDaddy",
   password: "password"
 ) # id: 2
 
-User.create!(
+user3 = User.create!(
   username: "DrJay",
   password: "password"
 ) # id: 3
 
-User.create!(
+user4 = User.create!(
   username: "BeetsForDaze",
   password: "password"
 ) # id: 4
 
+Song.destroy_all
 
-Song.create!(
+song1 = Song.create!(
   title: 'First',
   artist: 'Someone',
-  user_id: 1
+  user_id: user1.id
 ) # id: 1
 
-Song.create!(
+song2 = Song.create!(
   title: 'Second',
   artist: 'Someone',
-  user_id: 1
+  user_id: user1.id
 ) # id: 2
 
-Song.create!(
+song3 = Song.create!(
   title: 'Third',
   artist: 'Someone',
-  user_id: 2
+  user_id: user2.id
 ) # id: 3
 
-Song.create!(
+song4 = Song.create!(
   title: 'Fourth',
   artist: 'Someone',
-  user_id: 3
+  user_id: user3.id
 ) # id: 4
 
-Song.create!(
+song5 = Song.create!(
   title: 'Fifth',
   artist: 'Someone',
-  user_id: 4
+  user_id: user4.id
 )
 
+Like.destroy_all
+
 Like.create!(
-  user_id: 1,
-  song_id: 4
+  user_id: user1.id,
+  song_id: song4.id
 ) # id: 1
 
 Like.create!(
-  user_id: 2,
-  song_id: 1
+  user_id: user2.id,
+  song_id: song1.id
 ) # id: 2
 
 # Like.create!(
