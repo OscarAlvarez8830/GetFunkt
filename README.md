@@ -80,7 +80,7 @@ the API.
   - [x] `SongsIndex`
   - [ ] `SongIndexItem`
   - [ ] `SongForm`
-- [ ] implement music player
+- [x] implement music player
 - [ ] style songs components
 - [ ] seed songs
 

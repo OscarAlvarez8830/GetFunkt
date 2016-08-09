@@ -206,8 +206,15 @@ button:hover {
   display: block;
   position: relative;
   margin: 0 auto;
-  /*height: 1200px;
-  width: 1600px;*/
+}
+
+audio {
+  position: absolute;
+  bottom: 100px;
+  display: block;
+  width: 300px;
+  height: auto;
+  background-color: #FF530D;
 }
 
 .header-link {

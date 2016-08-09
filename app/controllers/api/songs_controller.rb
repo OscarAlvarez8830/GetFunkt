@@ -38,8 +38,6 @@ class Api::SongsController < ApplicationController
     render :index
   end
 
-  # CHECK!! will probably need other methods to specify by playlists
-
   def update
     @song = Song.find(params[:id])
 
@@ -72,7 +70,7 @@ class Api::SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :artist, :user_id)
+    params.require(:song).permit(:title, :artist, :user_id, :audio)
   end
 
 end

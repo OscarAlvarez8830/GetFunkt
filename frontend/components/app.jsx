@@ -58,7 +58,7 @@ const App = React.createClass({
 
         { this.props.children }
 
-        <audio id="audio-player"
+        <audio className="audio-player group"
           src={this.state.currentSong.audio_url}
           controls="controls"
           />

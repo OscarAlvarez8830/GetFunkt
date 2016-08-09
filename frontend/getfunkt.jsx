@@ -10,6 +10,7 @@ const SessionActions = require('./actions/session_actions');
 const SessionStore = require('./stores/session_store');
 const SongsIndex = require('./components/songs_index');
 const SongActions = require('./actions/song_actions');
+const SongForm = require('./components/song_form');
 const FeedIndex = require('./components/feed_index');
 
 
@@ -22,6 +23,7 @@ const appRouter = (
         <Route path="/stream" onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
         <Route path="/discover" onEnter={fetchIndex.bind(null, 'discover')} component={SongsIndex} />
       </Route>
+      <Route path="/upload" component={SongForm} />
 
     </Route>
 

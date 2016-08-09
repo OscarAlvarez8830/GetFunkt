@@ -27,6 +27,22 @@ const SongApiUtil = {
         console.log(error.responseText);
       }
     });
+  },
+
+  createSong(song, successCB) {
+    $.ajax({
+      url: 'api/songs',
+      method: 'POST',
+      dataType: 'JSON',
+      contentType: false,
+      processData: false,
+      success: (song) => {
+        successCB(song);
+      },
+      error: (error) => {
+        console.log(error.responseText);
+      }
+    });
   }
 
 };
