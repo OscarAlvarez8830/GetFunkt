@@ -206,6 +206,7 @@ button:hover {
   display: block;
   position: relative;
   margin: 0 auto;
+  height: 1200px;
   width: auto;
 }
 
@@ -214,8 +215,8 @@ button:hover {
   display: block;
   width: 200px;
   margin: 0 auto;
-  top: 100px;
-  text-align: left;
+  top: 400px;
+  text-align: center;
   right: 800px;
 }
 
