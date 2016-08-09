@@ -31,12 +31,12 @@ const SongActions = {
       actionType: SongConstants.SONG_RECEIVED,
       song: song
     });
-  },
-
-  createSong(song) {
-    // this callback should send the song to the player automatically
-    SongApiUtil.createSong(song, SongActions.receiveCurrentSong);
   }
+
+  // createSong(song) {
+  //   // this callback should send the song to the player automatically
+  //   SongApiUtil.createSong(song, SongActions.receiveCurrentSong);
+  // }
 };
 
 module.exports = SongActions;

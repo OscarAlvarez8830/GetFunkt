@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :songs, only: [:create, :show, :update, :destroy]
     get "/stream", to: "songs#stream", as: "stream"
-    get "/discover", to:"songs#discover", as: "discover"
+    get "/discover", to: "songs#discover", as: "discover"
+    post "/likes", to: "likes#create", as: "create"
+    delete "/likes", to: "likes#deletelike", as: "delete_like"
     resources :comments
   end
 
