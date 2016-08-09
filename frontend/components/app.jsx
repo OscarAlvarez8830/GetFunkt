@@ -60,6 +60,7 @@ const App = React.createClass({
 
         <audio className="audio-player group"
           src={this.state.currentSong.audio_url}
+          autoPlay="autoplay"
           controls="controls"
           />
 

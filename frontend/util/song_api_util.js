@@ -29,13 +29,14 @@ const SongApiUtil = {
     });
   },
 
-  createSong(song, successCB) {
+  createSong(formData, successCB) {
     $.ajax({
       url: 'api/songs',
       method: 'POST',
       dataType: 'JSON',
       contentType: false,
       processData: false,
+      data: formData,
       success: (song) => {
         successCB(song);
       },

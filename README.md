@@ -79,8 +79,8 @@ the API.
 - implement each song component, building out the flux loop as needed.
   - [x] `SongsIndex`
   - [ ] `SongIndexItem`
-  - [ ] `SongForm`
 - [x] implement music player
+- [ ] add album art to songs
 - [ ] style songs components
 - [ ] seed songs
 
@@ -115,8 +115,8 @@ Phase 3 adds organization to the Songs. Songs are organized by whether the curre
 
 **objective:** Give users a song upload form, make sure all previous styling works together, animate user interactions.
 
-- [ ] Create form for uploading songs
-- [ ] Ensure uploaded songs are saved in database
+- [x] Create form for uploading songs
+- [x] Ensure uploaded songs are saved in database
 - [ ] Create new users, upload songs, and stress-test for slow performance and style clashes
 - [ ] save Songs to the DB on submit
 - [ ] Make the whole thing PRETTY

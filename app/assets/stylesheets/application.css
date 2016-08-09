@@ -210,11 +210,13 @@ button:hover {
 
 audio {
   position: absolute;
-  bottom: 100px;
+  bottom: 0;
   display: block;
-  width: 300px;
+  width: 800px;
+  margin: 0 auto;
   height: auto;
   background-color: #FF530D;
+  border: 1px solid black;
 }
 
 .header-link {

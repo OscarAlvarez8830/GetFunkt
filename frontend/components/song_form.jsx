@@ -1,4 +1,7 @@
 const React = require('react');
+const SongApiUtil = require('../util/song_api_util');
+const History = require('../history');
+const SessionStore = require('../stores/session_store');
 
 const SongForm = React.createClass({
 
@@ -21,14 +24,23 @@ const SongForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
+    let formData = new FormData();
+    formData.append("song[title]", this.state.title);
+    formData.append("song[artist]", this.state.artist);
+    formData.append("song[audio]", this.state.songFile);
+    formData.append("song[user_id]", SessionStore.currentUser().id);
+    SongApiUtil.createSong(formData, this.goBack);
+  },
 
-    SongActions.createSong();
+  goBack() {
+    debugger
+    History.push("/");
   },
 
   render() {
     return (
       <div>
-        <form className="upload-form">
+        <form onSubmit={this.handleSubmit} className="upload-form">
           <input
             type="text"
             onChange={this.updateTitle}
@@ -44,6 +56,11 @@ const SongForm = React.createClass({
           <input
             type="file"
             onChange={this.updateFile}
+          />
+
+          <input
+            type="submit"
+            value="Upload"
           />
 
         </form>
