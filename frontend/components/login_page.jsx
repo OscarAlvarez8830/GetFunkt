@@ -46,6 +46,8 @@ const LoginPage = React.createClass({
         <header>
           <img id="welcome-image group"
             src={GetFunktAssets.welcomeImage}
+            height="1200px"
+            width="1800px"
             >
           </img>
           <div className="header-link">

@@ -206,8 +206,8 @@ button:hover {
   display: block;
   position: relative;
   margin: 0 auto;
-  height: 1200px;
-  width: auto;
+  /*height: 1200px;
+  width: 1600px;*/
 }
 
 .header-link {
