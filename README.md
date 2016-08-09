@@ -78,7 +78,7 @@ the API.
 - [x] test out API interaction in the console.
 - implement each song component, building out the flux loop as needed.
   - [x] `SongsIndex`
-  - [ ] `SongIndexItem`
+  - [x] `SongIndexItem`
 - [x] implement music player
 - [ ] add album art to songs
 - [ ] style songs components

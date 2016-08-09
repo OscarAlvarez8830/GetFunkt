@@ -220,13 +220,15 @@ audio {
 }
 
 .header-link {
+  float: right;
   position: absolute;
   display: block;
-  width: 200px;
-  margin: 0 auto;
+  width: 10%;
+  margin: auto;
   top: 400px;
   text-align: center;
-  right: 800px;
+  left: 45%;
+  right: 45%;
 }
 
 header {
