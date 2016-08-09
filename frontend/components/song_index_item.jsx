@@ -18,10 +18,6 @@ const SongIndexItem = React.createClass({
     return ({ like: like });
   },
 
-  componentDidMount() {
-    this.likeListener = SongStore.addListener(this.handleLike);
-  },
-
   playSong(e) {
     e.preventDefault();
 

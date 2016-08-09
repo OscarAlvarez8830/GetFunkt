@@ -3,13 +3,6 @@ const AppDispatcher = require('../dispatcher/dispatcher');
 const SongApiUtil = require('../util/song_api_util');
 
 const SongActions = {
-  // fetchStream() {
-  //   SongApiUtil.fetchStream(SongActions.receiveSongs);
-  // },
-  //
-  // fetchDiscover() {
-  //   SongApiUtil.fetchDiscover(SongActions.receiveSongs);
-  // },
 
   fetchIndex(indexType) {
     SongApiUtil.fetchIndex(indexType, SongActions.receiveSongs);
@@ -33,10 +26,6 @@ const SongActions = {
     });
   }
 
-  // createSong(song) {
-  //   // this callback should send the song to the player automatically
-  //   SongApiUtil.createSong(song, SongActions.receiveCurrentSong);
-  // }
 };
 
 module.exports = SongActions;

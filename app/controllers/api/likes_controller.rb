@@ -1,7 +1,13 @@
 class LikesController < ApplicationController
 
   def create
+    @like = Like.new(song_id: params[:songId], user_id: current_user.id)
 
+    if @like.save
+      render :show
+    else
+      render json: @like.errors.full_messages, status: 422
+    end
   end
 
   def deleteLike
