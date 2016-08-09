@@ -7,16 +7,16 @@ const SessionStore = require('../stores/session_store');
 
 const SongIndexItem = React.createClass({
 
-  getInitialState() {
-    let like;
-    if (this.props.location.pathname === '/discover') {
-      like = false;
-    } else if (this.props.song.user_id === SessionStore.currentUser().id) {
-      like = true;
-    }
-
-    return ({ like: like });
-  },
+  // getInitialState() {
+  //   let like;
+  //   if (this.props.location.pathname === '/discover') {
+  //     like = false;
+  //   } else if (this.props.song.user_id === SessionStore.currentUser().id) {
+  //     like = true;
+  //   }
+  //
+  //   return ({ like: like });
+  // },
 
   playSong(e) {
     e.preventDefault();
