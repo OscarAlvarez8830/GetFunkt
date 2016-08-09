@@ -33,30 +33,35 @@ song1 = Song.create!(
   title: 'First',
   artist: 'Someone',
   user_id: user1.id
+  # audio: File.open('app/assets/song_seeds/04 Breed.mp3')
 ) # id: 1
 
 song2 = Song.create!(
   title: 'Second',
   artist: 'Someone',
   user_id: user1.id
+  # audio: File.open('app/assets/song_seeds/07 Here Comes The Sun.mp3')
 ) # id: 2
 
 song3 = Song.create!(
   title: 'Third',
   artist: 'Someone',
   user_id: user2.id
+  # audio: File.open('app/assets/song_seeds/Resonancedj__Giulio_Maddaloni_-_01_-_Intro.mp3')
 ) # id: 3
 
 song4 = Song.create!(
   title: 'Fourth',
   artist: 'Someone',
   user_id: user3.id
+  # audio: File.open('app/assets/song_seeds/Resonancedj__Giulio_Maddaloni_-_02_-_Fasten_your_seatbelt.mp3')
 ) # id: 4
 
 song5 = Song.create!(
   title: 'Fifth',
   artist: 'Someone',
   user_id: user4.id
+  # audio: File.open('app/assets/song_seeds/Resonancedj__Giulio_Maddaloni_-_04_-_Particel_Size.mp3')
 )
 
 Like.destroy_all
