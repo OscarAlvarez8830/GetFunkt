@@ -39,8 +39,7 @@ const SongForm = React.createClass({
   },
 
   goBack() {
-    debugger
-    History.push("/");
+    History.push("/stream");
   },
 
   render() {

@@ -7,16 +7,18 @@ const SessionStore = require('../stores/session_store');
 
 const SongIndexItem = React.createClass({
 
-  // getInitialState() {
-  //   let like;
-  //   if (this.props.location.pathname === '/discover') {
-  //     like = false;
-  //   } else if (this.props.song.user_id === SessionStore.currentUser().id) {
-  //     like = true;
-  //   }
-  //
-  //   return ({ like: like });
-  // },
+  getInitialState() {
+    this.song = this.props.song;
+    let like;
+    if (this.props.feedType === 'discover') {
+      like = false;
+    } else if (this.song.user_id !== SessionStore.currentUser().id) {
+      like = true;
+    }
+
+    debugger
+    return ({ like: like });
+  },
 
   playSong(e) {
     e.preventDefault();
@@ -31,12 +33,41 @@ const SongIndexItem = React.createClass({
 
   },
 
+  crudButtons() {
+    if (this.song.user_id === SessionStore.currentUser().id) {
+      return (
+        <div>
+          <button className="crud-button" onClick={this.editSong}>Edit</button>
+          <button className="crud-button" onClick={this.deleteSong}>Delete</button>
+        </div>
+      );
+    }
+  },
+
   editSong(e) {
 
   },
 
   deleteSong(e) {
 
+  },
+
+  likeButton() {
+    const likeFn = this.addLike;
+    const unlikeFn = this.unlike;
+    if (this.state.like) {
+      return <button onClick={unlikeFn} className="unlike-button">Unlike</button>;
+    } else if (this.song.user_id !== SessionStore.currentUser().id) {
+      return <button onClick={likeFn} className="like-button">Like</button>;
+    }
+  },
+
+  addLike(e) {
+    e.preventDefault();
+  },
+
+  unlike(e) {
+    e.preventDefault();
   },
 
   render() {
@@ -56,6 +87,11 @@ const SongIndexItem = React.createClass({
         <div className="song-info group">
           <h4 onClick={this.playSong} className="song-title">{song.title}</h4>
           <h6>{song.artist}</h6>
+        </div>
+
+        <div className="song-buttons">
+          {this.likeButton()}
+          {this.crudButtons()}
         </div>
       </div>
     );

@@ -3,6 +3,7 @@ const Modal = require('react-modal');
 const Link = require('react-router').Link;
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
+const ErrorActions = require('../actions/error_actions');
 const ErrorStore = require('../stores/error_store');
 const History = require('../history');
 
@@ -14,6 +15,7 @@ const LoginForm = React.createClass({
 
   componentDidMount() {
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+    ErrorActions.clearErrors();
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
   },
 

@@ -199,12 +199,12 @@ audio {
   float: right;
   position: absolute;
   display: block;
-  width: 10%;
+  width: 20%;
   margin: auto;
-  top: 400px;
+  top: 420px;
   text-align: center;
-  left: 45%;
-  right: 45%;
+  left: 40%;
+  right: 40%;
 }
 
 header {

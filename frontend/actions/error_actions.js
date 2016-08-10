@@ -18,3 +18,4 @@ const ErrorActions = {
 };
 
 module.exports = ErrorActions;
+window.ErrorActions = ErrorActions;
