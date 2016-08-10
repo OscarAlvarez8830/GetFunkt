@@ -32,7 +32,7 @@ const EditForm = React.createClass({
 
   render() {
     return (
-      <div className="form-container">
+      <div className="edit-form-container">
         <h3 className="form-header">Edit Song</h3>
         <form onSubmit={this.handleSubmit} className="song-form">
           <input
