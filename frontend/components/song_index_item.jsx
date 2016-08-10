@@ -10,14 +10,17 @@ const SongIndexItem = React.createClass({
   getInitialState() {
     this.song = this.props.song;
     let like;
+    let owned = false;
     if (this.props.feedType === 'discover') {
       like = false;
     } else if (this.song.user_id !== SessionStore.currentUser().id) {
       like = true;
+    } else {
+      owned = true;
     }
 
-    debugger
-    return ({ like: like });
+    // debugger
+    return ({ like: like, owned: owned });
   },
 
   playSong(e) {
@@ -26,15 +29,25 @@ const SongIndexItem = React.createClass({
     SongActions.getSong(this.props.song.id);
   },
 
-  toggleLike(e) {
-    e.preventDefault();
-    let formerLikeStatus = this.state.like;
-    this.setState({like: !formerLikeStatus});
+  componentWillReceiveProps() {
+    this.song = this.props.song;
+    let like;
+    let owned = false;
 
+    if (this.props.feedType === 'discover') {
+      like = false;
+    } else if (this.song.user_id !== SessionStore.currentUser().id) {
+      like = true;
+    } else {
+      owned = true;
+    }
+
+    // debugger
+    this.setState({ like: like, owned: owned });
   },
 
   crudButtons() {
-    if (this.song.user_id === SessionStore.currentUser().id) {
+    if (this.state.owned) {
       return (
         <div>
           <button className="crud-button" onClick={this.editSong}>Edit</button>
@@ -57,17 +70,23 @@ const SongIndexItem = React.createClass({
     const unlikeFn = this.unlike;
     if (this.state.like) {
       return <button onClick={unlikeFn} className="unlike-button">Unlike</button>;
-    } else if (this.song.user_id !== SessionStore.currentUser().id) {
+    } else if (this.state.owned === false) {
       return <button onClick={likeFn} className="like-button">Like</button>;
     }
   },
 
   addLike(e) {
     e.preventDefault();
+
+    LikeApiUtil.createLike(this.song.id);
+    this.setState({like: true});
   },
 
   unlike(e) {
     e.preventDefault();
+
+    LikeApiUtil.deleteLike(this.song.id);
+    this.setState({like: false});
   },
 
   render() {
