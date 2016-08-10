@@ -24,6 +24,12 @@ const SongActions = {
       actionType: SongConstants.SONG_RECEIVED,
       song: song
     });
+  },
+
+  clearCurrentSong() {
+    AppDispatcher.dispatch({
+      actionType: SongConstants.CLEAR_SONG
+    });
   }
 
 };

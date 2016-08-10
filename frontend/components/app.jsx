@@ -3,6 +3,7 @@ const Modal = require('react-modal');
 const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
+const SongActions = require('../actions/song_actions');
 const SongStore = require('../stores/song_store');
 const History = require('../history');
 const LoginForm = require('./login_form');
@@ -30,6 +31,7 @@ const App = React.createClass({
 
   _handleLogOut() {
     SessionActions.logOut();
+    SongActions.clearCurrentSong();
     this.setState({ logged_in: false });
     History.push("/login");
   },

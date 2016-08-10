@@ -28,6 +28,11 @@ SongStore.playSong = function (song) {
   SongStore.__emitChange();
 };
 
+SongStore.clearCurrentSong = function () {
+  _currentSong = {};
+  SongStore.__emitChange();
+};
+
 SongStore.currentSong = function () {
   return _currentSong;
 };
@@ -39,6 +44,9 @@ SongStore.__onDispatch = function (payload) {
       break;
     case SongConstants.SONG_RECEIVED:
       SongStore.playSong(payload.song);
+      break;
+    case SongConstants.CLEAR_SONG:
+      SongStore.clearCurrentSong();
       break;
   }
 };
