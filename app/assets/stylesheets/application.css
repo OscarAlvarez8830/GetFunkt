@@ -220,6 +220,10 @@ header {
   display: block;
 }
 
+.song-image:hover {
+  cursor: pointer;
+}
+
 .song-info {
   display: block;
   float: left;
@@ -234,4 +238,12 @@ header {
   margin: 20px 0;
   height: 120px;
   width: 300px;
+}
+
+.song-title {
+
+}
+
+.song-title:hover {
+  cursor: pointer;
 }
