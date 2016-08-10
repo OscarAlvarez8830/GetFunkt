@@ -46,6 +46,23 @@ const SongApiUtil = {
     });
   },
 
+  updateSong(songId, formData, successCB) {
+    $.ajax({
+      url: `api/songs/${songId}`,
+      method: 'PATCH',
+      dataType: 'JSON',
+      contentType: false,
+      processData: false,
+      data: formData,
+      success: () => {
+        successCB();
+      },
+      error: (error) => {
+        console.log(error.responseText);
+      }
+    });
+  },
+
   deleteSong(songId, successCB) {
     $.ajax({
       url: `api/songs/${songId}`,

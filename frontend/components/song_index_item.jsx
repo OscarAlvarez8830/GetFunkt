@@ -4,6 +4,9 @@ const Link = require('react-router').Link;
 const SongStore = require('../stores/song_store');
 const SongActions = require('../actions/song_actions');
 const SessionStore = require('../stores/session_store');
+const Modal = require('react-modal');
+const ModalStyle = require('../modal_style');
+const EditForm = require('./edit_form');
 
 const SongIndexItem = React.createClass({
 
@@ -20,7 +23,7 @@ const SongIndexItem = React.createClass({
     }
 
     // debugger
-    return ({ like: like, owned: owned });
+    return ({ like: like, owned: owned, editModalOpen: false });
   },
 
   playSong(e) {
@@ -52,13 +55,28 @@ const SongIndexItem = React.createClass({
         <div>
           <button className="crud-button" onClick={this.editSong}>Edit</button>
           <button className="crud-button" onClick={this.deleteSong}>Delete</button>
+
+          <Modal
+            isOpen={this.state.editModalOpen}
+            onRequestClose={this.onModalClose}
+            style={ModalStyle}
+            >
+
+            <EditForm song={this.song} />
+          </Modal>
         </div>
       );
     }
   },
 
   editSong(e) {
+    e.preventDefault();
 
+    this.setState({ editModalOpen: true })
+  },
+
+  onModalClose() {
+    this.setState({ editModalOpen: false })
   },
 
   deleteSong(e) {

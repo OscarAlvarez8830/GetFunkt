@@ -19,26 +19,6 @@ const LoginPage = React.createClass({
     this.setState({ modalOpen: false });
   },
 
-  greeting() {
-    if (!SessionStore.currentUserHasBeenFetched()) {
-      return (
-        <div>
-          <nav className="login-signup">
-            <button onClick={this._handleClick.bind(this, true)}>Login </button>
-            <button onClick={this._handleClick.bind(this, false)}>Sign Up</button>
-          </nav>
-          <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.onModalClose}
-            style={ModalStyle}
-            >
-            <LoginForm formType={this.state.logIn ? 'login' : 'signup'}/>
-          </Modal>
-        </div>
-      );
-    }
-  },
-
   render() {
     return (
       <div>

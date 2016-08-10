@@ -31,7 +31,7 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 - [x] Continuous Play while Navigating the site
-- [] Song CRUD
+- [x] Song CRUD
   - [x] Song upload form for users
 
 
@@ -81,7 +81,7 @@ the API.
   - [x] `SongIndexItem`
 - [x] implement music player
 - [x] add album art to songs
-- [ ] style songs components
+- [x] style songs components
 - [x] seed songs
 
 
