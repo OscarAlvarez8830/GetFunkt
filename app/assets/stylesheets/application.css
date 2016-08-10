@@ -100,7 +100,7 @@ h4 {
   margin: 0 auto;
   width: 92%;
   font-size: 14px;
-  font-weight: 200px;
+  font-weight: 200;
   padding: 10px;
   color: white;
   background: #FF530D;
@@ -116,8 +116,8 @@ button:hover {
 }
 
 .nav-list {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  /*margin: 0 auto;*/
   background: #333;
   list-style: none;
   display: block;
@@ -246,4 +246,53 @@ header {
 
 .song-title:hover {
   cursor: pointer;
+}
+
+.song-form {
+
+}
+
+.form-container {
+  display: block;
+  width: 400px;
+  height: 600px;
+  margin: 20px 350px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.input-label {
+  margin: 0 auto;
+  display: block;
+  width: 150px;
+  /*float: right;*/
+  /*border: 3px solid red;*/
+  text-align: center;
+}
+
+.input-form {
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px 20px;
+}
+
+.submit {
+  font-size: 14px;
+  font-weight: 200;
+  padding: 10px;
+  color: white;
+  background: #FF530D;
+  text-align: center;
+  margin: 0 41%;
+  border-radius: 4px;
+}
+
+.form-header {
+  text-align: center;
+  font-weight: 200;
 }

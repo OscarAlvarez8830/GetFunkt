@@ -6,7 +6,7 @@ const SessionStore = require('../stores/session_store');
 const SongForm = React.createClass({
 
   getInitialState() {
-    return ({title: "", artist: "", songFile: null});
+    return ({title: "", artist: "", songFile: null, imageFile: null});
   },
 
   updateTitle(e) {
@@ -17,9 +17,14 @@ const SongForm = React.createClass({
     this.setState({artist: e.target.value});
   },
 
-  updateFile(e) {
+  updateSongFile(e) {
     const file = e.currentTarget.files[0];
     this.setState({songFile: file});
+  },
+
+  updateImageFile(e) {
+    const file = e.currentTarget.files[0];
+    this.setState({imageFile: file});
   },
 
   handleSubmit(e) {
@@ -28,6 +33,7 @@ const SongForm = React.createClass({
     formData.append("song[title]", this.state.title);
     formData.append("song[artist]", this.state.artist);
     formData.append("song[audio]", this.state.songFile);
+    formData.append("song[image]", this.state.imageFile);
     formData.append("song[user_id]", SessionStore.currentUser().id);
     SongApiUtil.createSong(formData, this.goBack);
   },
@@ -39,27 +45,40 @@ const SongForm = React.createClass({
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit} className="upload-form">
+      <div className="form-container">
+        <h3 className="form-header">Upload a New Song</h3>
+        <form onSubmit={this.handleSubmit} className="song-form">
           <input
             type="text"
+            className="input"
             onChange={this.updateTitle}
             placeholder="title"
           />
 
           <input
             type="text"
+            className="input"
             onChange={this.updateArtist}
             placeholder="artist"
           />
 
-          <input
-            type="file"
-            onChange={this.updateFile}
-          />
+        <label className="input-label">Song File</label>
+            <input
+              type="file"
+              className="input input-file"
+              onChange={this.updateSongFile}
+            />
+
+          <label className="input-label">Song Art</label>
+            <input
+              type="file"
+              className="input input-file"
+              onChange={this.updateImageFile}
+            />
 
           <input
             type="submit"
+            className="submit"
             value="Upload"
           />
 
