@@ -50,7 +50,7 @@ const LoginPage = React.createClass({
             width="1900px"
             >
           </img>
-          <div className="header-link">
+          <div className="welcome-link">
             <Link to="/"><h1>GetFunkt</h1></Link>
             <h4>Music For You, By You</h4>
           </div>
