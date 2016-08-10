@@ -62,7 +62,9 @@ const SongIndexItem = React.createClass({
   },
 
   deleteSong(e) {
+    e.preventDefault();
 
+    SongActions.deleteSong(this.song.id);
   },
 
   likeButton() {

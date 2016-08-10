@@ -37,8 +37,22 @@ const SongApiUtil = {
       contentType: false,
       processData: false,
       data: formData,
-      success: (song) => {
+      success: () => {
         successCB();
+      },
+      error: (error) => {
+        console.log(error.responseText);
+      }
+    });
+  },
+
+  deleteSong(songId, successCB) {
+    $.ajax({
+      url: `api/songs/${songId}`,
+      method: 'DELETE',
+      dataType: 'JSON',
+      success: (song) => {
+        successCB(song);
       },
       error: (error) => {
         console.log(error.responseText);

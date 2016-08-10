@@ -30,6 +30,17 @@ const SongActions = {
     AppDispatcher.dispatch({
       actionType: SongConstants.CLEAR_SONG
     });
+  },
+
+  deleteSong(songId) {
+    SongApiUtil.deleteSong(songId, SongActions.removeSong);
+  },
+
+  removeSong(song) {
+    AppDispatcher.dispatch({
+      actionType: SongConstants.REMOVE_SONG,
+      song: song
+    });
   }
 
 };

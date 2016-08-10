@@ -33,6 +33,11 @@ SongStore.clearCurrentSong = function () {
   SongStore.__emitChange();
 };
 
+SongStore.removeSong = function (song) {
+  delete _songs[song.id];
+  SongStore.__emitChange();
+};
+
 SongStore.currentSong = function () {
   return _currentSong;
 };
@@ -47,6 +52,9 @@ SongStore.__onDispatch = function (payload) {
       break;
     case SongConstants.CLEAR_SONG:
       SongStore.clearCurrentSong();
+      break;
+    case SongConstants.REMOVE_SONG:
+      SongStore.removeSong(payload.song);
       break;
   }
 };
