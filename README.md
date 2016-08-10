@@ -11,15 +11,15 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Songs
-  - [ ] Smooth, bug-free navigation
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Clean CSS styling for a polished look
 - [ ] Stream and Discover feeds
-  - [ ] Smooth, bug-free navigation
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 - [ ] Likes
-  - [ ] Provide a way to populate the Stream and Discover feeds
+  - [x] Provide a way to populate the Stream and Discover feeds
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 - [ ] User Pages
@@ -30,9 +30,9 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
-- [ ] Continuous Play while Navigating the site
-- [ ] Song CRUD
-  - [ ] Song upload form for users
+- [x] Continuous Play while Navigating the site
+- [] Song CRUD
+  - [x] Song upload form for users
 
 
 ## Design Docs
@@ -82,7 +82,7 @@ the API.
 - [x] implement music player
 - [ ] add album art to songs
 - [ ] style songs components
-- [ ] seed songs
+- [x] seed songs
 
 
 ### Phase 3: Likes, Stream and Discover (2 days, W2 W 6pm)
@@ -118,7 +118,6 @@ Phase 3 adds organization to the Songs. Songs are organized by whether the curre
 - [x] Create form for uploading songs
 - [x] Ensure uploaded songs are saved in database
 - [ ] Create new users, upload songs, and stress-test for slow performance and style clashes
-- [ ] save Songs to the DB on submit
 - [ ] Make the whole thing PRETTY
 
 ### Bonus: Add Waveform

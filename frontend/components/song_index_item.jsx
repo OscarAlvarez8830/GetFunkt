@@ -44,8 +44,11 @@ const SongIndexItem = React.createClass({
     //CHECK!! this will need to become a link to start playing the song
     // it can always be in that state; no need to turn it off when it starts playing
     return (
-      <div>
-        <h5 onClick={this.playSong}>{song.title}</h5>
+      <div onClick={this.playSong}>
+
+        <img src={song.image_url} height="100px" width="100px"/>
+
+        <h4>{song.title}</h4>
         <h6>{song.artist}</h6>
       </div>
     );
