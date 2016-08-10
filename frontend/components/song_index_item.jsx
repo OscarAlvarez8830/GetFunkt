@@ -68,7 +68,7 @@ const SongIndexItem = React.createClass({
   likeButton() {
     const likeFn = this.addLike;
     const unlikeFn = this.unlike;
-    if (this.state.like) {
+    if (this.state.like && this.state.owned === false) {
       return <button onClick={unlikeFn} className="unlike-button">Unlike</button>;
     } else if (this.state.owned === false) {
       return <button onClick={likeFn} className="like-button">Like</button>;
