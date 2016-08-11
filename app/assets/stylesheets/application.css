@@ -207,6 +207,10 @@ audio {
   right: 40%;
 }
 
+.tagline:hover {
+  cursor: default;
+}
+
 header {
   display: block;
   position: absolute;

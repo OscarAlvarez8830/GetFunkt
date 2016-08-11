@@ -32,7 +32,7 @@ const LoginPage = React.createClass({
           </img>
           <div className="welcome-link">
             <Link to="/"><h1>GetFunkt</h1></Link>
-            <h4>Music For You, By You</h4>
+            <h4 className="tagline">Music For You, By You</h4>
           </div>
         </header>
 
