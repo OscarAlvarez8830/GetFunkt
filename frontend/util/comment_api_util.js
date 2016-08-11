@@ -16,6 +16,7 @@ const CommentApiUtil = {
   },
 
   createComment(comment, successCB) {
+    debugger
     $.ajax({
       url: 'api/comments',
       method: 'POST',

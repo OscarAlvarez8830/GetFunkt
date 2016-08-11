@@ -116,7 +116,7 @@ button:hover {
   padding: 5px 10px;
   background-color: #FF530D;
   color: white;
-  margin: 15px 0 0 0;
+  margin: 3px 0 0 0;
   border-radius: 4px;
   font-weight: 100;
   font-size: 12px;
@@ -126,7 +126,7 @@ button:hover {
 }
 
 .like {
-  margin: 35px 0;
+  margin: 15px 0;
 }
 
 .nav_bar {
@@ -337,4 +337,37 @@ header {
   height: 380px;
   /*border: 1px solid #aaa;*/
   /*border-radius: 4px;*/
+}
+
+.comment-form-body {
+  height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.comment-form {
+  /*border: 3px solid red;*/
+  box-sizing: content-box;
+  width: 97%;
+}
+
+.comment-submit {
+  margin: 5px 32%;
+}
+
+.comment-item {
+  margin-bottom: 10px;
+}
+
+.comment-button {
+  text-align: center;
+  font-size: 12px;
+  background-color: #FF530D;
+  padding: 5px 8px 5px 10px;
+  color: white;
+  border-radius: 4px;
+  margin: 5px 0 0 0px;
 }

@@ -14,24 +14,24 @@ const CommentForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
 
-    CommentActions.createComment(
-      {comment:
-        {body: this.state.body,
-        song_id: this.props.songId}
-      });
+    CommentActions.createComment({
+      body: this.state.body,
+      song_id: this.props.songId
+    });
   },
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="comment-form">
         <textarea
           className="comment-form-body"
           onChange={this.handleBody}
           value={this.state.body}
           />
 
-        <input type="submit" className="submit" value="Add Comment" />
+        <input type="submit" className="comment-submit submit" value="Add Comment" />
       </form>
     );
   }
