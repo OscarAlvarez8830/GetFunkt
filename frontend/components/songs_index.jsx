@@ -22,6 +22,10 @@ const SongsIndex = React.createClass({
     this.setState({songs: SongStore.all()});
   },
 
+  componentWillReceiveProps(newProps) {
+    SongActions.fetchIndex(newProps.location.pathname.slice(1));
+  },
+
   componentWillUnmount() {
     this.listener.remove();
   },
