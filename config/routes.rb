@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get "/stream", to: "songs#stream", as: "stream"
     get "/discover", to: "songs#discover", as: "discover"
     post "/likes", to: "likes#create", as: "create"
-    delete "/likes", to: "likes#deletelike", as: "delete_like"
+    delete "/likes", to: "likes#deleteLike", as: "delete_like"
     resources :comments
   end
 

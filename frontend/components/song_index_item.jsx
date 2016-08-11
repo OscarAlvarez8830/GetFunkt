@@ -9,6 +9,7 @@ const ModalStyle = require('../modal_style');
 const EditForm = require('./edit_form');
 const CommentIndex = require('./comment_index');
 const CommentForm = require('./comment_form');
+const LikeApiUtil = require('../util/like_api_util');
 
 const SongIndexItem = React.createClass({
 
@@ -132,7 +133,6 @@ const SongIndexItem = React.createClass({
   },
 
   commentModal() {
-
     return (
       <Modal
         isOpen={this.state.commentModalOpen}

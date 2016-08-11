@@ -1,1 +1,1 @@
-json.extract! like, :song_id, :user_id
+json.extract! @like, :song_id, :user_id
