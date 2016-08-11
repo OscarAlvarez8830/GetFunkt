@@ -7,6 +7,8 @@ const SessionStore = require('../stores/session_store');
 const Modal = require('react-modal');
 const ModalStyle = require('../modal_style');
 const EditForm = require('./edit_form');
+const CommentIndex = require('./comment_index');
+const CommentForm = require('./comment_form');
 
 const SongIndexItem = React.createClass({
 
@@ -26,6 +28,7 @@ const SongIndexItem = React.createClass({
       like: like,
       owned: owned,
       editModalOpen: false,
+      commentModalOpen: false,
       title: this.song.title,
       artist: this.song.artist
      });
@@ -128,6 +131,30 @@ const SongIndexItem = React.createClass({
     this.setState({like: false});
   },
 
+  commentModal() {
+
+    return (
+      <Modal
+        isOpen={this.state.commentModalOpen}
+        onRequestClose={this.onCommentModalClose}
+        style={ModalStyle}
+        >
+
+        <CommentIndex songId={this.song.id} />
+        <CommentForm songId={this.song.id} />
+      </Modal>
+    );
+  },
+
+  getComments(e) {
+    e.preventDefault();
+    this.setState({ commentModalOpen: true });
+  },
+
+  onCommentModalClose() {
+    this.setState({ commentModalOpen: false });
+  },
+
   render() {
     const song = this.props.song;
 
@@ -150,6 +177,10 @@ const SongIndexItem = React.createClass({
           {this.likeButton()}
           {this.crudButtons()}
         </div>
+        <button className="comment-button" onClick={this.getComments}>
+          Comments
+        </button>
+        {this.commentModal()}
       </div>
     );
   }

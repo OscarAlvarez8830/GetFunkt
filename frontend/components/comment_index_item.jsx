@@ -8,7 +8,9 @@ const CommentIndexItem = React.createClass({
   deleteButton() {
     if (this.props.comment.user_id === SessionStore.currentUser().id) {
       return (
-        <button onClick={this.deleteComment}>Delete</button>
+        <button className="comment-delete" onClick={this.deleteComment}>
+          Delete
+        </button>
       );
     }
   },
@@ -19,7 +21,7 @@ const CommentIndexItem = React.createClass({
   },
 
   render() {
-    // CHECK!! the author bit; not sure that'll work
+    // CHECK!! the author bit - not sure that'll work
     // goes back to the jbuilder view partial
     return (
       <div className="comment-item">

@@ -1,5 +1,6 @@
 const AppDispatcher = require('../dispatcher/dispatcher');
 const CommentApiUtil = require('../util/comment_api_util');
+const CommentConstants = require('../constants/comment_constants');
 
 const CommentActions = {
 

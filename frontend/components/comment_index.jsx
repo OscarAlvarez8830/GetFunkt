@@ -24,13 +24,13 @@ const CommentIndex = React.createClass({
 
   render() {
     return (
-      <ul className="comment-index">
-        {
-          this.state.comments.map((comment) => {
-            return <CommentIndexItem comment={comment} />;
-          })
-        }
-      </ul>
+        <ul className="comment-index">
+          {
+            this.state.comments.map((comment) => {
+              return <li><CommentIndexItem comment={comment} /></li>;
+            })
+          }
+        </ul>
     );
   }
 });
