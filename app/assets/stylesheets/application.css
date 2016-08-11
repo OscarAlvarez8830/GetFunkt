@@ -305,6 +305,10 @@ header {
   border-radius: 4px;
 }
 
+.submit:hover {
+  cursor: pointer;
+}
+
 .form-header {
   text-align: center;
   font-weight: 200;
