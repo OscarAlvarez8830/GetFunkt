@@ -25,7 +25,7 @@ const LoginPage = React.createClass({
 
         <header>
           <img id="welcome-image group"
-            src={GetFunktAssets.welcomeImage}
+            src={GetFunktAssets.welcomeImage2}
             height="auto"
             width="100%"
             >

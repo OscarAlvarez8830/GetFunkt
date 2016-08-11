@@ -18,18 +18,18 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
   - [x] Smooth, bug-free navigation
   - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
-- [ ] Likes
+- [x] Likes
   - [x] Provide a way to populate the Stream and Discover feeds
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 - [ ] User Pages
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
-- [ ] Comments
-  - [ ] Smooth, bug-free navigation
+- [x] Comments
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 - [x] Continuous Play while Navigating the site
 - [x] Song CRUD
   - [x] Song upload form for users
@@ -104,11 +104,11 @@ Phase 3 adds organization to the Songs. Songs are organized by whether the curre
 
 **Objective:** Songs can have multiple comments.
 
-- [ ] create `Comment` model
+- [x] create `Comment` model
 - build out API, Flux loop, and components for:
-  - [ ] fetching comments for songs
-  - [ ] adding comments to songs
-- [ ] Style new elements
+  - [x] fetching comments for songs
+  - [x] adding comments to songs
+- [x] Style new elements
 - [ ] Seed comments
 
 ### Phase 5: Add Song Upload form, Clean Up Styling (1 day, W2 F 6pm)

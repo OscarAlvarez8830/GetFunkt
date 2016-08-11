@@ -1,0 +1,378 @@
+ html, body, header, nav, h1, a, ul, li,
+ strong, main, section, img, div, h2, p,
+ form, fieldset, label, input, textarea,
+ button, article, footer, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   background: transparent;
+ }
+
+ .group:after {
+   content: "";
+   display: block;
+   clear: both;
+ }
+
+body {
+  box-sizing: content-box;
+  font-family: 'Lucida Grande', sans-serif;
+  background: #f2f2f2;
+}
+
+#app {
+  background-image: asset-data-url("background-image3.jpeg");
+  background-size: 100%;
+  width: 1216px;
+  height: 1695px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+#auth-form {
+  /*display: block;
+  margin: auto;*/
+  /*width: 300px;
+  height: 500px;*/
+}
+
+#login-errors {
+  list-style: none;
+  font-size: 12px;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+h4 {
+  font-weight: 300;
+}
+
+.feed-index {
+  float: left;
+
+  margin: 20px 0;
+}
+
+.feed-list {
+  width: 85%;
+  display: block;
+  float: left;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  margin: 0 0 20px 0;
+  color: #FF530D;
+}
+
+.feed-list-item {
+  width: 50%;
+  display: block;
+  float: left;
+  font-size: 24px;
+  text-align: left;
+}
+
+.login-button:hover {
+  cursor: pointer;
+}
+
+.input {
+  display: block;
+  width: 85%;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  background: white;
+}
+
+.login-button {
+  text-align: center;
+  margin: 0 auto;
+  width: 92%;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 10px;
+  color: white;
+  background: #FF530D;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.song-button {
+  padding: 5px 10px;
+  background-color: #FF530D;
+  color: white;
+  margin: 3px 0 0 0;
+  border-radius: 4px;
+  font-weight: 100;
+  font-size: 12px;
+  float: left;
+  width: 80px;
+  text-align: center;
+}
+
+.like {
+  margin: 15px 0;
+}
+
+.nav_bar {
+}
+
+.nav-list {
+  width: 100%;
+  /*margin: 0 auto;*/
+  background: #333;
+  list-style: none;
+  display: block;
+  float: left;
+}
+
+.nav-list-item {
+  font-weight: 200;
+  font-size: 14px;
+  color: #ccc;
+  padding: 12px 0;
+  display: block;
+  float: left;
+  height: 46px;
+  width: 104px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.song-index {
+
+}
+
+.song-index:first-child {
+  margin: 20px 0 0 0;
+}
+
+#welcome-message {
+  color: #aaa;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+#login {
+  border-radius: 3px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 14px;
+  font-weight: 100;
+  padding: 2px 11px 2px 10px;
+}
+
+#signup {
+  margin: 0 20px;
+  padding: 2px 11px 2px 10px;
+  font-size: 14px;
+  font-weight: 100;
+  border-radius: 3px;
+  background: #FF530D;
+  color: white;
+}
+
+.auth-buttons {
+  display: block;
+  top: 10px;
+  right: 10px;
+
+  float: right;
+  position: absolute;
+}
+
+#welcome-image {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+
+audio {
+  position: fixed;
+  bottom: 5px;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  height: auto;
+}
+
+.welcome-link {
+  float: right;
+  position: absolute;
+  display: block;
+  width: 20%;
+  margin: auto;
+  top: 48%;
+  text-align: center;
+  left: 40%;
+  right: 40%;
+}
+
+.tagline:hover {
+  cursor: default;
+}
+
+header {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.song-image {
+  float: left;
+  display: block;
+}
+
+.song-image:hover {
+  cursor: pointer;
+}
+
+.song-info {
+  display: block;
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin: 0 0 0 10px;
+  color: #ccc;
+}
+
+.song-item {
+  display: block;
+  /*padding: 10px 0;*/
+  margin: 20px 0;
+  height: 120px;
+  width: 300px;
+}
+
+.song-title {
+
+}
+
+.song-title:hover {
+  cursor: pointer;
+}
+
+.song-form {
+
+}
+
+.form-container {
+  display: block;
+  width: 400px;
+  height: 600px;
+  margin: 20px 33%;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.input-label {
+  margin: 0 auto;
+  display: block;
+  width: 150px;
+  /*float: right;*/
+  /*border: 3px solid red;*/
+  text-align: center;
+}
+
+.input-form {
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px 20px;
+}
+
+.auth-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px 3%;
+  padding: 5px 20px;
+  width: 78%;
+  text-align: center;
+}
+
+.submit {
+  font-size: 14px;
+  font-weight: 200;
+  padding: 10px;
+  color: white;
+  background: #FF530D;
+  text-align: center;
+  margin: 0 41%;
+  border-radius: 4px;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+.form-header {
+  text-align: center;
+  font-weight: 200;
+}
+
+.edit-form-container {
+  display: block;
+  width: 280px;
+  height: 380px;
+  /*border: 1px solid #aaa;*/
+  /*border-radius: 4px;*/
+}
+
+.comment-form-body {
+  height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.comment-form {
+  /*border: 3px solid red;*/
+  box-sizing: content-box;
+  width: 97%;
+}
+
+.comment-submit {
+  margin: 5px 32%;
+}
+
+.comment-item {
+  margin-bottom: 10px;
+}
+
+.comment-button {
+  text-align: center;
+  font-size: 12px;
+  background-color: #FF530D;
+  padding: 5px 8px 5px 10px;
+  color: white;
+  border-radius: 4px;
+  margin: 5px 0 0 0px;
+}
