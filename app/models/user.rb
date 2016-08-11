@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     through: :likes,
     source: :song
   )
-  # has_many :comments # CHECK!! add in when comment model is up
+  has_many :comments, dependent: :destroy # CHECK!! add in when comment model is up
 
   attr_reader :password
 

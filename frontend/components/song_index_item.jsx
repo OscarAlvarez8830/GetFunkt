@@ -76,8 +76,8 @@ const SongIndexItem = React.createClass({
     if (this.state.owned) {
       return (
         <div>
-          <button className="crud-button" onClick={this.editSong}>Edit</button>
-          <button className="crud-button" onClick={this.deleteSong}>Delete</button>
+          <button className="song-button" onClick={this.editSong}>Edit</button>
+          <button className="song-button" onClick={this.deleteSong}>Delete</button>
 
           <Modal
             isOpen={this.state.editModalOpen}
@@ -113,9 +113,9 @@ const SongIndexItem = React.createClass({
     const likeFn = this.addLike;
     const unlikeFn = this.unlike;
     if (this.state.like && this.state.owned === false) {
-      return <button onClick={unlikeFn} className="unlike-button">Unlike</button>;
+      return <button onClick={unlikeFn} className="like song-button">Unlike</button>;
     } else if (this.state.owned === false) {
-      return <button onClick={likeFn} className="like-button">Like</button>;
+      return <button onClick={likeFn} className="like song-button">Like</button>;
     }
   },
 

@@ -112,6 +112,23 @@ button:hover {
   cursor: pointer;
 }
 
+.song-button {
+  padding: 5px 10px;
+  background-color: #FF530D;
+  color: white;
+  margin: 15px 0 0 0;
+  border-radius: 4px;
+  font-weight: 100;
+  font-size: 12px;
+  float: left;
+  width: 80px;
+  text-align: center;
+}
+
+.like {
+  margin: 35px 0;
+}
+
 .nav_bar {
 }
 

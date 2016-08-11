@@ -50,9 +50,6 @@ class Api::SongsController < ApplicationController
   end
 
   def destroy
-    # CHECK!!
-    # the form will need another button that links to the destroy action in PlaylistSongs (to remove from playlist)
-    # will have to update the playlist store and re-render upon change
     @song = Song.find(params[:id])
     if @song.user_id != current_user.id
       render json: ["Don't be a jerk. You can't delete someone else's song."], status: 422
