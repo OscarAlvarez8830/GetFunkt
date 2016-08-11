@@ -19,7 +19,6 @@ const SongsIndex = React.createClass({
   },
 
   handleChange() {
-    debugger
     this.setState({songs: SongStore.all()});
   },
 

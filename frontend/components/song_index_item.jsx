@@ -22,7 +22,6 @@ const SongIndexItem = React.createClass({
       owned = true;
     }
 
-    debugger
     return ({
       like: like,
       owned: owned,
@@ -33,12 +32,11 @@ const SongIndexItem = React.createClass({
   },
 
   componentDidMount() {
-    this.listener = SongStore.addListener(this.handleChange);
+    this.listener = SongStore.addListener(this.handleSongChange);
   },
 
-  handleChange() {
+  handleSongChange() {
     this.song = SongStore.getSong(this.song.id);
-    debugger
     this.setState({title: this.song.title, artist: this.song.artist});
   },
 

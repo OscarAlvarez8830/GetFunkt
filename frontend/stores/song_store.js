@@ -20,10 +20,8 @@ SongStore.getSong = function(songId) {
 };
 
 SongStore.resetSongs = function (songs) {
-  debugger
   _songs = {};
   songs.forEach((song) => {
-    debugger
     _songs[song.id] = song;
   });
   SongStore.__emitChange();
