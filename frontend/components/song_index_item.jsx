@@ -67,11 +67,6 @@ const SongIndexItem = React.createClass({
     this.setState({ like: like, owned: owned });
   },
 
-  // editSubmitCB() {
-  //   this.forceUpdate();
-  //   this.onModalClose();
-  // },
-
   crudButtons() {
     if (this.state.owned) {
       return (
@@ -81,11 +76,11 @@ const SongIndexItem = React.createClass({
 
           <Modal
             isOpen={this.state.editModalOpen}
-            onRequestClose={this.onModalClose}
+            onRequestClose={this.onEditModalClose}
             style={ModalStyle}
             >
 
-            <EditForm song={this.song} submitCB={this.onModalClose}/>
+            <EditForm song={this.song} submitCB={this.onEditModalClose}/>
           </Modal>
         </div>
       );
@@ -98,7 +93,7 @@ const SongIndexItem = React.createClass({
     this.setState({ editModalOpen: true });
   },
 
-  onModalClose() {
+  onEditModalClose() {
     this.setState({ editModalOpen: false });
     this.forceUpdate.call(this);
   },
@@ -135,8 +130,7 @@ const SongIndexItem = React.createClass({
 
   render() {
     const song = this.props.song;
-    //CHECK!! this will need to become a link to start playing the song
-    // it can always be in that state; no need to turn it off when it starts playing
+
     return (
       <div className="song-item group" >
 
