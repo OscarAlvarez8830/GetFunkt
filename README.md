@@ -95,7 +95,7 @@ the API.
   - [x] liking a song will add it to your Stream
   - [x] songs not already liked will be in your Discover feed
   - [x] viewing songs by feed
-- [ ] Use CSS to style new components
+- [x] Use CSS to style new components
 - [ ] Seed Likes
 
 Phase 3 adds organization to the Songs. Songs are organized by whether the current user likes them, which populates song 'Index' view.
@@ -133,4 +133,4 @@ Phase 3 adds organization to the Songs. Songs are organized by whether the curre
 [phase-three]: docs/phases/phase3.md
 [phase-four]: docs/phases/phase4.md
 [phase-five]: docs/phases/phase5.md
-[phase-six]: docts/phases/phase6.md
+[phase-six]: docs/phases/phase6.md
