@@ -15,6 +15,10 @@ SongStore.all = function () {
   return songs;
 };
 
+SongStore.getSong = function(songId) {
+  return _songs[songId];
+};
+
 SongStore.resetSongs = function (songs) {
   _songs = {};
   songs.forEach((song) => {
@@ -38,6 +42,11 @@ SongStore.removeSong = function (song) {
   SongStore.__emitChange();
 };
 
+SongStore.updateSong = function (song) {
+  _songs[song.id] = song;
+  SongStore.__emitChange();
+};
+
 SongStore.currentSong = function () {
   return _currentSong;
 };
@@ -55,6 +64,9 @@ SongStore.__onDispatch = function (payload) {
       break;
     case SongConstants.REMOVE_SONG:
       SongStore.removeSong(payload.song);
+      break;
+    case SongConstants.SONG_UPDATE_RECEIVED:
+      SongStore.updateSong(payload.song);
       break;
   }
 };

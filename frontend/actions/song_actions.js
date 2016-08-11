@@ -26,6 +26,17 @@ const SongActions = {
     });
   },
 
+  updateSong(songId, formData) {
+    SongApiUtil.updateSong(songId, formData, SongActions.receiveUpdatedSong);
+  },
+
+  receiveUpdatedSong(song) {
+    AppDispatcher.dispatch({
+      actionType: SongConstants.SONG_UPDATE_RECEIVED,
+      song: song
+    });
+  },
+
   clearCurrentSong() {
     AppDispatcher.dispatch({
       actionType: SongConstants.CLEAR_SONG

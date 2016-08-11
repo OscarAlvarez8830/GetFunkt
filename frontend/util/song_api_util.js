@@ -54,8 +54,8 @@ const SongApiUtil = {
       contentType: false,
       processData: false,
       data: formData,
-      success: () => {
-        successCB();
+      success: (song) => {
+        successCB(song);
       },
       error: (error) => {
         console.log(error.responseText);

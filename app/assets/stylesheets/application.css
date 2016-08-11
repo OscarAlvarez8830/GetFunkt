@@ -281,6 +281,15 @@ header {
   margin: 16px 20px;
 }
 
+.auth-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px 3%;
+  padding: 5px 20px;
+  width: 78%;
+  text-align: center;
+}
+
 .submit {
   font-size: 14px;
   font-weight: 200;

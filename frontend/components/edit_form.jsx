@@ -1,12 +1,11 @@
 const React = require('react');
-const SongApiUtil = require('../util/song_api_util');
+const SongActions = require('../actions/song_actions');
 const History = require('../history');
 
 const EditForm = React.createClass({
 
   getInitialState() {
     const song = this.props.song;
-    debugger
     return ({ title: song.title, artist: song.artist });
   },
 
@@ -23,7 +22,8 @@ const EditForm = React.createClass({
     let formData = new FormData();
     formData.append("song[title]", this.state.title);
     formData.append("song[artist]", this.state.artist);
-    SongApiUtil.updateSong(this.props.song.id, formData, this.goBack);
+    SongActions.updateSong(this.props.song.id, formData);
+    this.props.submitCB();
   },
 
   goBack() {

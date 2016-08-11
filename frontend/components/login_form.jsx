@@ -70,7 +70,7 @@ const LoginForm = React.createClass({
           <div id="auth-form group">
             <form onSubmit={this.handleSubmit}>
                 <input
-                  className="input"
+                  className="auth-input"
                   type="text"
                   onChange={this.handleUsername}
                   value={this.state.username}
@@ -78,7 +78,7 @@ const LoginForm = React.createClass({
                 />
 
               <input
-                className="input"
+                className="auth-input"
                 type="password"
                 onChange={this.handlePassword}
                 placeholder="password"

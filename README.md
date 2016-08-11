@@ -10,14 +10,14 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Songs
+- [x] Songs
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Clean CSS styling for a polished look
-- [ ] Stream and Discover feeds
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Clean CSS styling for a polished look
+- [x] Stream and Discover feeds
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
 - [ ] Likes
   - [x] Provide a way to populate the Stream and Discover feeds
   - [ ] Adequate seed data to demonstrate the site's features

@@ -23,7 +23,26 @@ const SongIndexItem = React.createClass({
     }
 
     // debugger
-    return ({ like: like, owned: owned, editModalOpen: false });
+    return ({
+      like: like,
+      owned: owned,
+      editModalOpen: false,
+      title: this.song.title,
+      artist: this.song.artist
+     });
+  },
+
+  componentDidMount() {
+    this.listener = SongStore.addListener(this.handleChange);
+  },
+
+  handleChange() {
+    this.song = SongStore.getSong(this.song.id);
+    this.setState({title: this.song.title, artist: this.song.artist});
+  },
+
+  componentWillUnmount() {
+    this.listener.remove();
   },
 
   playSong(e) {
@@ -49,6 +68,11 @@ const SongIndexItem = React.createClass({
     this.setState({ like: like, owned: owned });
   },
 
+  // editSubmitCB() {
+  //   this.forceUpdate();
+  //   this.onModalClose();
+  // },
+
   crudButtons() {
     if (this.state.owned) {
       return (
@@ -62,7 +86,7 @@ const SongIndexItem = React.createClass({
             style={ModalStyle}
             >
 
-            <EditForm song={this.song} />
+            <EditForm song={this.song} submitCB={this.onModalClose}/>
           </Modal>
         </div>
       );
@@ -72,11 +96,12 @@ const SongIndexItem = React.createClass({
   editSong(e) {
     e.preventDefault();
 
-    this.setState({ editModalOpen: true })
+    this.setState({ editModalOpen: true });
   },
 
   onModalClose() {
-    this.setState({ editModalOpen: false })
+    this.setState({ editModalOpen: false });
+    this.forceUpdate.call(this);
   },
 
   deleteSong(e) {
