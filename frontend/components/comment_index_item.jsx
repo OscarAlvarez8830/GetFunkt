@@ -6,7 +6,6 @@ const SessionStore = require('../stores/session_store');
 const CommentIndexItem = React.createClass({
 
   deleteButton() {
-    debugger
     if (this.props.comment.user.id === SessionStore.currentUser().id) {
       return (
         <button className="comment-delete" onClick={this.deleteComment}>
@@ -22,9 +21,6 @@ const CommentIndexItem = React.createClass({
   },
 
   render() {
-    // CHECK!! the author bit - not sure that'll work
-    // goes back to the jbuilder view partial
-
 
     return (
       <div className="comment-item">

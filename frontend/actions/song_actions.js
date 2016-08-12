@@ -52,6 +52,10 @@ const SongActions = {
       actionType: SongConstants.REMOVE_SONG,
       song: song
     });
+  },
+
+  fetchUserSongs(userId) {
+    SongApiUtil.fetchUserSongs(userId, SongActions.receiveSongs);
   }
 
 };

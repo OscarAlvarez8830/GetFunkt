@@ -37,6 +37,13 @@ class Api::SongsController < ApplicationController
     render :index
   end
 
+  def usersongs
+    @songs = Song.where(user_id: params[:user_id])
+    # debugger
+
+    render :index
+  end
+
   def update
     @song = Song.find(params[:id])
 

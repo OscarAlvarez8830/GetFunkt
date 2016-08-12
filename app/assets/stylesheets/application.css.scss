@@ -169,6 +169,8 @@ button:hover {
   color: #aaa;
   font-size: 16px;
   font-weight: 200;
+  margin-left: 10px;
+  display: block;
 }
 
 #login {
@@ -200,11 +202,11 @@ button:hover {
   position: absolute;
 }
 
-#welcome-image {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-}
+// #welcome-image {
+//   display: block;
+//   position: relative;
+//   margin: 0 auto;
+// }
 
 audio {
   position: fixed;
@@ -364,7 +366,7 @@ header {
 }
 
 .comment-item {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .comment-button {
@@ -375,4 +377,25 @@ header {
   color: white;
   border-radius: 4px;
   margin: 5px 0 0 0px;
+}
+
+.comment-author {
+  font-size: 12px;
+}
+
+.comment-body {
+  font-size: 14px;
+}
+
+.comment-time {
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.comment-delete {
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #FF530D;
+  color: white;
 }

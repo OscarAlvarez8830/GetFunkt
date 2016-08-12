@@ -75,6 +75,20 @@ const SongApiUtil = {
         console.log(error.responseText);
       }
     });
+  },
+
+  fetchUserSongs(userId, successCB) {
+    $.ajax({
+      url: `api/usersongs/${userId}`,
+      method: 'GET',
+      dataType: 'JSON',
+      success: (songs) => {
+        successCB(songs);
+      },
+      error: (error) => {
+        console.log(error.responseText);
+      }
+    });
   }
 
 };

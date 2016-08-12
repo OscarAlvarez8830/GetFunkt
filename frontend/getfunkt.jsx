@@ -22,6 +22,7 @@ const appRouter = (
         <IndexRoute onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
         <Route path="/stream" onEnter={fetchIndex.bind(null, 'stream')} component={SongsIndex} />
         <Route path="/discover" onEnter={fetchIndex.bind(null, 'discover')} component={SongsIndex} />
+        <Route path="/usersongs/:userId" onEnter={fetchUserSongs} component={SongsIndex} />
       </Route>
       <Route path="/upload" component={SongForm} />
 
@@ -32,7 +33,12 @@ const appRouter = (
   </Router>
 );
 
+function fetchUserSongs(props) {
+  SongActions.fetchUserSongs(props.params.userId);
+}
+
 function fetchIndex(indexType) {
+  // debugger
   SongActions.fetchIndex(indexType);
 }
 

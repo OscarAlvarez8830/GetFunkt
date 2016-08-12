@@ -24,6 +24,7 @@ SongStore.resetSongs = function (songs) {
   songs.forEach((song) => {
     _songs[song.id] = song;
   });
+
   SongStore.__emitChange();
 };
 

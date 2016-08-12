@@ -8,6 +8,7 @@ const EditForm = require('./edit_form');
 const CommentIndex = require('./comment_index');
 const CommentForm = require('./comment_form');
 const LikeApiUtil = require('../util/like_api_util');
+const Link = require('react-router').Link;
 
 const SongIndexItem = React.createClass({
 
@@ -38,11 +39,13 @@ const SongIndexItem = React.createClass({
   },
 
   handleSongChange() {
+    // debugger
     this.song = SongStore.getSong(this.song.id);
     this.setState({title: this.song.title, artist: this.song.artist});
   },
 
   componentWillUnmount() {
+    // debugger
     this.listener.remove();
   },
 
@@ -53,6 +56,7 @@ const SongIndexItem = React.createClass({
   },
 
   componentWillReceiveProps() {
+    // debugger
     this.song = this.props.song;
     let like;
     let owned = false;
@@ -155,6 +159,7 @@ const SongIndexItem = React.createClass({
 
   render() {
     const song = this.props.song;
+    const userId = song.user.id;
 
     return (
       <div className="song-item group" >
@@ -169,6 +174,7 @@ const SongIndexItem = React.createClass({
         <div className="song-info group">
           <h4 onClick={this.playSong} className="song-title">{song.title}</h4>
           <h6>{song.artist}</h6>
+          <Link to={`usersongs/${userId}`}>{song.user.username}</Link>
         </div>
 
         <div className="song-buttons">
