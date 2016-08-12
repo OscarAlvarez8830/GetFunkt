@@ -54,8 +54,8 @@ const SongActions = {
     });
   },
 
-  fetchUserSongs(userId) {
-    SongApiUtil.fetchUserSongs(userId, SongActions.receiveSongs);
+  fetchUserSongs(userName) {
+    SongApiUtil.fetchUserSongs(userName, SongActions.receiveSongs);
   },
 
   clearAllSongs() {

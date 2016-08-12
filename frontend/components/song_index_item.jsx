@@ -168,7 +168,7 @@ const SongIndexItem = React.createClass({
 
   render() {
     const song = this.props.song;
-    const userId = song.user.id;
+    const userName = song.user.username;
 
     return (
       <div className="song-item group" >
@@ -185,7 +185,7 @@ const SongIndexItem = React.createClass({
           <h6 onClick={this.playSong} className="song-artist">{song.artist}</h6>
           <div className="song-user">
             <h6>user: </h6>
-            <h6><Link to={`usersongs/${userId}`}>{song.user.username}</Link></h6>
+            <h6><Link to={`usersongs/${userName}`}>{song.user.username}</Link></h6>
             </div>
         </div>
 

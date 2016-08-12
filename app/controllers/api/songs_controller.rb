@@ -24,22 +24,19 @@ class Api::SongsController < ApplicationController
   end
 
   def discover
-    # songs that don't have current_user as a liker
-    # *Song* has_many :user_likes, through: :likes
-    # *User* has_many :liked_songs, through: :likes
-    # @songs = Song.joins(:likes).where.not(likes: { user_id: current_user.id } )
-    @songs = Song.where.not(user_id: current_user.id, id: current_user.liked_songs.pluck(:id))
-    # @songs = songs.where.not(song: current_user.liked_songs)
-    # @songs = songs.joins('LEFT OUTER JOIN like')
-      # .where.not(likes: {user_id: current_user.id})
-    # CHECK!! this query may be wrong
-    # test when you have components live
+    @songs = Song.where.not(
+      user_id: current_user.id,
+      id: current_user.liked_songs.pluck(:id)
+    )
+
     render :index
   end
 
   def usersongs
-    @songs = Song.where(user_id: params[:user_id])
+    # @songs = Song.where(user_id: params[:user_id])
     # debugger
+    user = User.find_by(username: params[:username])
+    @songs = Song.where(user: user)
 
     render :index
   end

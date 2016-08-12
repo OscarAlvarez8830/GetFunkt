@@ -77,9 +77,9 @@ const SongApiUtil = {
     });
   },
 
-  fetchUserSongs(userId, successCB) {
+  fetchUserSongs(userName, successCB) {
     $.ajax({
-      url: `api/usersongs/${userId}`,
+      url: `api/usersongs/${userName}`,
       method: 'GET',
       dataType: 'JSON',
       success: (songs) => {
