@@ -14,11 +14,14 @@ const CommentForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
 
     CommentActions.createComment({
       body: this.state.body,
       song_id: this.props.songId
     });
+
+    this.setState({ body: ""});
   },
 
   render() {
