@@ -32,6 +32,7 @@ const SongsIndex = React.createClass({
 
   componentWillUnmount() {
     this.listener.remove();
+    SongActions.clearAllSongs();
   },
 
   welcomeMessage() {

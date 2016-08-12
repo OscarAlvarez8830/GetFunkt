@@ -56,6 +56,12 @@ const SongActions = {
 
   fetchUserSongs(userId) {
     SongApiUtil.fetchUserSongs(userId, SongActions.receiveSongs);
+  },
+
+  clearAllSongs() {
+    AppDispatcher.dispatch({
+      actionType: SongConstants.CLEAR_ALL_SONGS
+    });
   }
 
 };
