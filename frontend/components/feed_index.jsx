@@ -5,7 +5,6 @@ const SessionStore = require('../stores/session_store');
 const FeedIndex = React.createClass({
 
   getInitialState() {
-    // debugger
     const feed = this.props.location.pathname.slice(1);
     return({feed: feed});
   },

@@ -14,7 +14,6 @@ const CommentForm = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
 
     CommentActions.createComment({
       body: this.state.body,

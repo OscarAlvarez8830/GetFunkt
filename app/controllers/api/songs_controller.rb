@@ -15,10 +15,8 @@ class Api::SongsController < ApplicationController
   end
 
   def stream
-    # debugger
     liked_songs = current_user.liked_songs
     songs = current_user.songs
-    # debugger
     @songs = liked_songs + songs
     render :index
   end
@@ -34,7 +32,6 @@ class Api::SongsController < ApplicationController
 
   def usersongs
     # @songs = Song.where(user_id: params[:user_id])
-    # debugger
     user = User.find_by(username: params[:username])
     @songs = Song.where(user: user)
 

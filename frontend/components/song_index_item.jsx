@@ -46,7 +46,6 @@ const SongIndexItem = React.createClass({
   },
 
   componentWillUnmount() {
-    // debugger
     this.listener.remove();
   },
 
@@ -57,7 +56,6 @@ const SongIndexItem = React.createClass({
   },
 
   componentWillReceiveProps() {
-    // debugger
     this.song = this.props.song;
     let like;
     let owned = false;
@@ -70,7 +68,6 @@ const SongIndexItem = React.createClass({
       owned = true;
     }
 
-    // debugger
     this.setState({ like: like, owned: owned });
   },
 

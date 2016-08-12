@@ -1,7 +1,6 @@
 class Api::CommentsController < ApplicationController
 
   def index
-    # debugger # CHECK!! params
     @comments = Comment.where(song_id: params[:song_id])
   end
 

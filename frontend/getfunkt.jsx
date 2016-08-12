@@ -38,7 +38,6 @@ function fetchUserSongs(props) {
 }
 
 function fetchIndex(indexType) {
-  // debugger
   SongActions.fetchIndex(indexType);
 }
 

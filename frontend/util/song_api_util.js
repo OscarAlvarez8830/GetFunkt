@@ -10,7 +10,6 @@ const SongApiUtil = {
       },
       error: (error) => {
         console.log(error.responseText);
-        // CHECK!! properly handle errors
       }
     });
   },

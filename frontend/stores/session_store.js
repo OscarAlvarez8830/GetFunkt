@@ -19,8 +19,6 @@ function _logout() {
   SessionStore.__emitChange();
 }
 
-// CHECK!! possibly need methods for dealing with a user's songs, playlists, favorites
-
 SessionStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case SessionConstants.LOGIN:

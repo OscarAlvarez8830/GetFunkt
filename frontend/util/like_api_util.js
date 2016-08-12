@@ -6,7 +6,6 @@ const LikeApiUtil = {
       dataType: 'JSON',
       data: { songId },
       success: (like) => {
-        // successCB(like);
       },
       error: (error) => {
         console.log(error.responseText);
@@ -21,7 +20,6 @@ const LikeApiUtil = {
       dataType: 'JSON',
       data: { songId },
       success: (like) => {
-        // successCB(like);
       },
       error: (error) => {
         console.log(error.responseText);
