@@ -39,9 +39,10 @@ const SongIndexItem = React.createClass({
   },
 
   handleSongChange() {
-    // debugger
     this.song = SongStore.getSong(this.song.id);
-    this.setState({title: this.song.title, artist: this.song.artist});
+    if (this.song) { // this condition accounts for the SongStore clearing out when the index unmounts
+      this.setState({title: this.song.title, artist: this.song.artist});
+    }
   },
 
   componentWillUnmount() {
@@ -84,6 +85,7 @@ const SongIndexItem = React.createClass({
             isOpen={this.state.editModalOpen}
             onRequestClose={this.onEditModalClose}
             style={ModalStyle}
+            onAfterOpen={this.onModalOpen}
             >
 
             <EditForm song={this.song} submitCB={this.onEditModalClose}/>
@@ -100,6 +102,7 @@ const SongIndexItem = React.createClass({
   },
 
   onEditModalClose() {
+    ModalStyle.content.opacity = 0;
     this.setState({ editModalOpen: false });
     this.forceUpdate.call(this);
   },
@@ -140,6 +143,7 @@ const SongIndexItem = React.createClass({
         isOpen={this.state.commentModalOpen}
         onRequestClose={this.onCommentModalClose}
         style={ModalStyle}
+        onAfterOpen={this.onModalOpen}
         >
 
         <CommentIndex songId={this.song.id} />
@@ -153,8 +157,13 @@ const SongIndexItem = React.createClass({
     this.setState({ commentModalOpen: true });
   },
 
+  onModalOpen() {
+    ModalStyle.content.opacity = 100;
+  },
+
   onCommentModalClose() {
     this.setState({ commentModalOpen: false });
+    ModalStyle.content.opacity = 0;
   },
 
   render() {

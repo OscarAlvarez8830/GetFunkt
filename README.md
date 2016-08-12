@@ -24,7 +24,7 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
   - [x] Adequate CSS styling
 - [x] User Pages
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
 - [x] Comments
   - [x] Smooth, bug-free navigation
@@ -96,7 +96,7 @@ the API.
   - [x] songs not already liked will be in your Discover feed
   - [x] viewing songs by feed
 - [x] Use CSS to style new components
-- [ ] Seed Likes
+- [x] Seed Likes
 
 Phase 3 adds organization to the Songs. Songs are organized by whether the current user likes them, which populates song 'Index' view.
 
@@ -117,7 +117,7 @@ Phase 3 adds organization to the Songs. Songs are organized by whether the curre
 
 - [x] Create form for uploading songs
 - [x] Ensure uploaded songs are saved in database
-- [ ] Create new users, upload songs, and stress-test for slow performance and style clashes
+- [x] Create new users, upload songs, and stress-test for slow performance and style clashes
 - [ ] Make the whole thing PRETTY
 
 ### Bonus: Add Waveform

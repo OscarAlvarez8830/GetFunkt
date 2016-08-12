@@ -5,7 +5,8 @@ module.exports = {
     // left: '650px',
     // bottom: '500px',
     // right: '650px',
-    backgroundColor: 'rgba(255, 255, 255, 0.75)'
+    // opacity: '75',
+    backgroundColor: 'rgba(255, 83, 13, 0.5)'
   },
 
   content: {
@@ -22,6 +23,8 @@ module.exports = {
     background: '#fff',
     borderRadius: '4px',
     outline: 'none',
-    padding: '20px'
+    padding: '20px',
+    opacity: '0',
+    transition: 'opacity 1s'
   }
 };

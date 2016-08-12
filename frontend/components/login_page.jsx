@@ -15,8 +15,13 @@ const LoginPage = React.createClass({
     this.setState({ modalOpen: true, logIn: bool });
   },
 
+  onModalOpen() {
+    ModalStyle.content.opacity = 100;
+  },
+
   onModalClose() {
     this.setState({ modalOpen: false });
+    ModalStyle.content.opacity = 0;
   },
 
   render() {
@@ -46,6 +51,7 @@ const LoginPage = React.createClass({
               isOpen={this.state.modalOpen}
               onRequestClose={this.onModalClose}
               style={ModalStyle}
+              onAfterOpen={this.onModalOpen}
               >
               <LoginForm formType={this.state.logIn ? 'login' : 'signup'}/>
             </Modal>

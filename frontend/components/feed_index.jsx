@@ -3,14 +3,6 @@ const Link = require('react-router').Link;
 
 const FeedIndex = React.createClass({
 
-  getInitialState() {
-    return({feed: 'stream'});
-  },
-
-  clickHandler(feedType) {
-    this.setState( { feed: feedType === 'discover' ? 'discover' : 'stream' });
-  },
-
   render() {
     return (
       <div className="feed-index">
