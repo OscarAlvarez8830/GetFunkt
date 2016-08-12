@@ -62,6 +62,16 @@ const LoginForm = React.createClass({
     SessionActions.logIn({username: 'guest', password: 'password'});
   },
 
+  guestButton() {
+    if (this.props.formType === 'login') {
+      return (<button className="login-button" onClick={this.guestLogin}>Guest</button>);
+    }
+  },
+
+  submitButtonValue() {
+    return this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
+  },
+
   render() {
 
     return (
@@ -86,13 +96,13 @@ const LoginForm = React.createClass({
               <input
                 className="login-button"
                 type="submit"
-                value="Submit"
+                value={this.submitButtonValue()}
               />
               <div>
                 { this.errors() }
               </div>
             </form>
-            <button className="login-button" onClick={this.guestLogin}>Guest</button>
+            {this.guestButton()}
           </div>
         </div>
     );
