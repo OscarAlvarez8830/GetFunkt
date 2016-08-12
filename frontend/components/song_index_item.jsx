@@ -173,8 +173,11 @@ const SongIndexItem = React.createClass({
 
         <div className="song-info group">
           <h4 onClick={this.playSong} className="song-title">{song.title}</h4>
-          <h6>{song.artist}</h6>
-          <Link to={`usersongs/${userId}`}>{song.user.username}</Link>
+          <h6 onClick={this.playSong} className="song-artist">{song.artist}</h6>
+          <div className="song-user">
+            <h6>user: </h6>
+            <h6><Link to={`usersongs/${userId}`}>{song.user.username}</Link></h6>
+            </div>
         </div>
 
         <div className="song-buttons">

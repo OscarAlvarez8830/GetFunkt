@@ -40,7 +40,7 @@ const SongsIndex = React.createClass({
     } else if (this.feedType() === 'discover'){
       return <h4 id="welcome-message">Check out music from other users:</h4>;
     } else {
-      return <h4 id="welcome-message">User Uploads</h4>;
+      return <h4 id="user-welcome-message">Check out music from this user:</h4>;
     }
   },
 

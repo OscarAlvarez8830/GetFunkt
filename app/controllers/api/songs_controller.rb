@@ -28,7 +28,7 @@ class Api::SongsController < ApplicationController
     # *Song* has_many :user_likes, through: :likes
     # *User* has_many :liked_songs, through: :likes
     # @songs = Song.joins(:likes).where.not(likes: { user_id: current_user.id } )
-    @songs = Song.where.not(user_id: current_user.id)
+    @songs = Song.where.not(user_id: current_user.id, id: current_user.liked_songs.pluck(:id))
     # @songs = songs.where.not(song: current_user.liked_songs)
     # @songs = songs.joins('LEFT OUTER JOIN like')
       # .where.not(likes: {user_id: current_user.id})

@@ -1,7 +1,6 @@
 class Api::LikesController < ApplicationController
 
   def create
-    debugger
     @like = Like.new(song_id: params[:songId], user_id: current_user.id)
 
     if @like.save

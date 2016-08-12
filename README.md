@@ -22,10 +22,10 @@ By the end of week 9, this app will, at a minimum, satisfy the following criteri
   - [x] Provide a way to populate the Stream and Discover feeds
   - [ ] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
-- [ ] User Pages
-  - [ ] Smooth, bug-free navigation
+- [x] User Pages
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 - [x] Comments
   - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features

@@ -173,6 +173,16 @@ button:hover {
   display: block;
 }
 
+#user-welcome-message {
+  color: #aaa;
+  font-size: 16px;
+  font-weight: 200;
+  display: block;
+  // position: absolute;
+  // top: 30%;
+  margin-left: 10px;
+}
+
 #login {
   border-radius: 3px;
   background: transparent;
@@ -268,10 +278,18 @@ header {
 }
 
 .song-title {
-
+  margin: 10px 0 0 0;
 }
 
 .song-title:hover {
+  cursor: pointer;
+}
+
+.song-artist {
+  margin: 5px 0 0 0;
+}
+
+.song-artist:hover {
   cursor: pointer;
 }
 
@@ -398,4 +416,14 @@ header {
   border-radius: 4px;
   background-color: #FF530D;
   color: white;
+}
+
+.song-user {
+  // position: absolute;
+  bottom: 0;
+  margin: 10px 0 0 0;
+}
+
+h6 {
+  margin: 5px 0;
 }
